@@ -1,5 +1,5 @@
 \documentclass[12pt]{report}
-
+\usepackage{hyperref}
 \usepackage[pdftex]{graphicx}
 \usepackage[normalem]{ulem}
 \usepackage[utf8]{inputenc}
@@ -8,7 +8,6 @@
 \usepackage{hyperref}
 
 \begin{document}
-
   \begin{titlepage}
     \centering
         \vfill
@@ -26,7 +25,6 @@
         \hfill
         \includegraphics[height=1.7cm]{logo/usmb.png}
   \end{titlepage}
-
   \chapter{Préambule}
     \section{Remerciements}
       Ce rapport représente l'aboutissement du projet de 40 heures qui s'est déroulé entre octobre 2018 et avril 2019. Nous tenons tout d'abord à remercier Gilles Fraisse pour son soutien, sa pédagogie, mais aussi pour le temps qu'il a passé à nous accompagner.
@@ -39,12 +37,20 @@
       L'optimisation par algorithme génétique permet d'obtenir de bonnes approximations de résolutions pour différents problèmes (avec un ou plusieurs objectifs). De façon générale, les algorithmes génétiques sont construits de telle façon à ce que l'on puisse faire varier certains paramètres. C'est ces mêmes paramètres qui vont déterminer la qualité et la fiabilité du résultat, mais aussi qui vont faire varier de façon plus ou moins significative le temps de résolution. Il s'agit alors de trouver un juste milieu entre le temps résolution et la fiabilité du résultat.
 
   \chapter{Introduction}
-      Parler de l'inteet de l'opti dans le monde de l'ingienerie
+    Selon la \emph{Théorie de l'évolution} \cite{darwin} de Charles Darwin, l'évolution des espèces est issue de mutations aléatoires qui surviennent lors de la conception d'une nouvelle génération d'individus. Si cette mutation permet à l'individus d'être plus adapté à son milieu de vie, alors il aura plus de chance d'atteindre l'age adulte et d'engendrer une nouvelle génération.
+    Les algorithmes génétiques sont une application directe du darwinisme à l'informatique.\\
+    De nos jours, ces algorithmes permettent de résoudre des problèmes d'optimisation, c'est à dire de maximiser ou minimiser numériquement une ou plusieurs fonctions.
+    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingéniérie ou on cherche dans de très nombreux cas à
+
 
   \tableofcontents
 
   \chapter{Optimisation à objectif unique}
     \section{Algorithme}
+      \subsection{Principe}
+      \subsection{Fonctionnement du programme}
+
+
     \section{Optimisation unidimensionnelle}
     \section{Optimisation multidimensionnelle}
 
@@ -57,10 +63,29 @@
 
   \chapter{Conclusion}
 
+  \appendix
+
   \chapter{Bibliographie}
-    \nocite{*} %On affiche toute la Bibliographie
-    \bibliographystyle{plain}
-    \bibliography{biblio}
+  \nocite{*} %On affiche toute la Bibliographie
+  \bibliographystyle{plain}
+  \bibliography{biblio}
+
+  \chapter{Annexes}
+    \subsection{Programme}
+      \paragraph{}
+      L'ensemble des programmes qui ont été utilisé pour réaliser ce projet sont mis à disposition sur notre page GitHub : \\\\
+      \url{https://github.com/Akashita/TPE-NSGAII}
+
+      \paragraph{}
+      Ce travail est soumis à la license \emph{GNU General Public License v3.0}\\ %\emph dit à latex que cette partie est importante
+      Pour plus de détails veuillez vous référer au site suivant : \\\\
+      \url{https://www.gnu.org/licenses/gpl-3.0.en.html}
+
+    \subsection{Figures}
+
+
+
+
 
 
 \end{document}
