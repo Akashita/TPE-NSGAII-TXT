@@ -1,5 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1549749962 "report.tex" "report.pdf" "report" 1549749964
+["bibtex report"] 1549813857 "report.aux" "report.bbl" "report" 1549813858
+  "C:/Users/Akashita/Documents/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
+  "biblio.bib" 1549813852 581 0f9a41de1adc57c89d782860798008e3 ""
+  "report.aux" 1549813858 3077 81409b567f771f17fa5cb6165cc1a022 ""
+  (generated)
+  "report.blg"
+  "report.bbl"
+["pdflatex"] 1549813857 "report.tex" "report.pdf" "report" 1549813858
   "C:/Users/Akashita/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1549734483 31952 bdeab9ea4d6861908702c4949073e6a0 ""
   "C:/Users/Akashita/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1728.pk" 1549734366 49100 c63bcc2c92d3170823f2fb7dec01eedc ""
   "C:/Users/Akashita/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk" 1549734036 72288 35fd70fce8b51196ff786e641e7ad5f8 ""
@@ -65,13 +72,14 @@
   "C:/Users/Akashita/Documents/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "logo/polytech.jpg" 1549745525 80131 9517b3d69ec499dd0d8bdf0ccb118283 ""
   "logo/usmb.png" 1422973768 45018 7ed16dcc4df04955ebf2112340dbc2bb ""
-  "report.aux" 1549749964 2218 480a569668b00e3febcea3d02e5e4a16 ""
-  "report.out" 1549749964 452 e39c747c9bf716506c93b4d0bb34530f ""
-  "report.tex" 1549749962 2410 0e048fc34d227e7dc26200b7282868bc ""
-  "report.toc" 1549749964 667 f2ed6acecb473162a2c7cc5be5d0db25 ""
+  "report.aux" 1549813858 3077 81409b567f771f17fa5cb6165cc1a022 ""
+  "report.bbl" 1549813857 614 4e68cbde38e53e201e5d6507402ad1c2 "bibtex report"
+  "report.out" 1549813858 836 74b5401e637ab26f0ff55ca901db069d ""
+  "report.tex" 1549813096 3102 96316543135275307fd3bcc99068a130 ""
+  "report.toc" 1549813858 1136 8f782aeb0bee9a195376ab2d9c80a464 ""
   (generated)
-  "report.log"
   "report.toc"
   "report.pdf"
   "report.out"
   "report.aux"
+  "report.log"

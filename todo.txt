@@ -1,1 +1,51 @@
 Attention, il faut rendre avec le rapport une fiche synoptique qui est sur l'intranet (ou dans le mail de amen)
+
+
+Aller faire un tour à la bu, récupérer tous les bouquin sur l'optimisation/python et
+les foutre dans le report.bib
+(Je sais c'est pas bien de mentir, mais ça fait parti de la note et on va pas citer que wikipédia)
+
+
+Des exemples de types de biblio :
+@Article{ref,
+author={},
+journal={},
+title={},
+year={},
+month={},
+pages={},
+notes={}
+}
+
+
+@book{ref2,
+author={},
+title={},
+publisher={},
+year={}
+}
+
+
+@manual{ref3,
+title={},
+author={},
+year={},
+organization={}
+}
+
+
+@phdthesis{ref5,
+title={},
+author={},
+school={},
+year={}
+}
+
+
+@unpublished{ref6,
+author={},
+title={},
+note={},
+year={},
+month={}
+}

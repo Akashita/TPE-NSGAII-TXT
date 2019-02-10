@@ -118,6 +118,8 @@ INPUT C:\Users\Akashita\Documents\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\Akashita\Documents\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
 INPUT C:\Users\Akashita\Documents\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 OUTPUT report.toc
+INPUT report.bbl
+INPUT report.bbl
 INPUT report.aux
 INPUT .\report.out
 INPUT .\report.out
