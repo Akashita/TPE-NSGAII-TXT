@@ -6,8 +6,12 @@
 \usepackage[english,frenchb,francais]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{wrapfig}
+
 
 \begin{document}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
   \begin{titlepage}
     \centering
         \vfill
@@ -48,23 +52,53 @@
   \chapter{Optimisation à objectif unique}
     \section{Algorithme}
       \subsection{Principe}
+        \begin{wrapfigure}{r}{6cm}
+          \centering
+          \includegraphics[width=5cm]{img/schema_algo_single.png}
+          \caption{Fonctionnement}
+        \end{wrapfigure}
+        Hormis quelques variations dans leur conception, les algorithmes génétiques on pratiquement tous le même principe de fonctionnement.
+        Le logigramme ci-joint illustre le fonctionnement de base de l'algorithme.
+        Tout d'abord on génère de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
+        Chaque individus de cette population est alors évalué, on lui attribut donc une valeur qui va déterminer sa position par rapport à la solution optimale recherchée.
+        Une selection est alors effectuée en gardant les meilleurs résultats, mais aussi en en gardant un certain poucentage de de valeurs considérée comme de moyenne/faible qualité. Cette dernière opération permet à l'algorithme de ne pas ... dans un extremum local.
+        A partir de cette séléction, l'algorithme va ensuite procéder à deux étapes : \\
+        Le croisement (Crossover) :
+        Il consiste à partager (croiser) les particulartiés de deux individus parents pour engendrer une petite population d'individus conservant ces mêmes particularités. A noter qu'il existe plusieurs méthodes de croisement (un point / deux points)... .
+        On retrouve cette opération en biologie sous le nom de "brassage génétique".
+        (Principe d'héridité de la théorie de Darwin)
+        \begin{figure}
+          \centering
+          \includegraphics{img/crossover.png}
+          \caption{Crossover}
+        \end{figure}
+        \\
+        La mutation :
+        Contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette oprération complète l'opération de séléction précédement évoquée afin d'éviter de tomber dans un extremum local.
+        (Principe de variation de la théorie de Darwin)
 
 
-    \section{Optimisation unidimensionnelle/multidimensionnelle}
+
+    \section{Optimisation unidimensionnelle / multidimensionnelle}.
+
     \section{Influence du paramétrage }
 
 
 
   \chapter{Optimisation à objectifs multiples}
     \section{Algorithme - NSGAII}
+    L'algorithmes d'optimisation NSGAII (Non dominated sorting genetic algorithm) est un algorithme connu et utilisé à l'échelle mondiale.
+    + Multi obj
       \subsection{Principe}
-    \section{Optimisation multidimensionnelle/unidimensionnelle}
+      + Diff avec algo standard : celui la est élitiste
+
+    \section{Optimisation multidimensionnelle / unidimensionnelle}
     \section{Influence du paramétrage}
     \section{NSGA III}
 
 
   \chapter{Conclusion}
-
+   + Il existe d'autre algo utilisés : http://www.laas.fr/files/MOGISA/sem_Alain-Berro.pdf p.31
   \appendix
 
   \chapter{Bibliographie}
