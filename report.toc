@@ -11,7 +11,7 @@
 \contentsline {chapter}{\numberline {4}Optimisation \IeC {\`a} objectifs multiples}{6}{chapter.4}% 
 \contentsline {section}{\numberline {4.1}Algorithme - NSGAII}{6}{section.4.1}% 
 \contentsline {subsection}{\numberline {4.1.1}Principe}{6}{subsection.4.1.1}% 
-\contentsline {section}{\numberline {4.2}Optimisation multidimensionnelle / unidimensionnelle}{6}{section.4.2}% 
+\contentsline {section}{\numberline {4.2}M\IeC {\'e}thode de comparaison des r\IeC {\'e}sultats}{6}{section.4.2}% 
 \contentsline {section}{\numberline {4.3}Influence du param\IeC {\'e}trage}{6}{section.4.3}% 
 \contentsline {section}{\numberline {4.4}NSGA III}{6}{section.4.4}% 
 \contentsline {chapter}{\numberline {5}Conclusion}{7}{chapter.5}% 

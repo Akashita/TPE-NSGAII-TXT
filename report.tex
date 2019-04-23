@@ -8,10 +8,9 @@
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{wrapfig}
-
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
 
 \begin{document}
-\geometry{hmargin=2.5cm,vmargin=1.5cm}
   \begin{titlepage}
     \centering
         \vfill
@@ -83,6 +82,12 @@
 
     \section{Influence du paramétrage }
 
+    \begin{wrapfigure}{r}{10cm}
+      \centering
+      \includegraphics[width=6cm]{img/3,2.png}
+      \caption{Fonctionnement}
+    \end{wrapfigure}
+
 
 
   \chapter{Optimisation à objectifs multiples}
@@ -90,15 +95,33 @@
     L'algorithmes d'optimisation NSGAII (Non dominated sorting genetic algorithm) est un algorithme connu et utilisé à l'échelle mondiale.
     + Multi obj
       \subsection{Principe}
+      \begin{figure}[h]
+        \begin{minipage}[c]{.46\linewidth}
+            \centering
+            \includegraphics[width=6cm]{img/4,1,1_Pareto_uni.png}
+            \caption{Légende}
+        \end{minipage}
+        \hfill%
+        \begin{minipage}[c]{.46\linewidth}
+            \centering
+            \includegraphics[width=6cm]{img/4,1,1_Pareto.png}
+            \caption{Légende}
+        \end{minipage}
+      \end{figure}
+
+
       + Diff avec algo standard : celui la est élitiste
 
-    \section{Optimisation multidimensionnelle / unidimensionnelle}
+    \section{Méthode de comparaison des résultats}
+      Le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur (ou un n-uplet) avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de pareto géométriquement en calculant l'air, le volume ou l'hypervolume de ce dernier. 
+      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions. [AJOUTER SCH2MA] En [couleur] est représenté le front de pareto de référence et en [coueleur] un front trouvé à l'aide de l'algorithme NSGAII. On pose le point A sur le plan (x,y) et on calcule les aires des front [couelur] et [couelur] en tenant compte du point A. On obtient alors deux valeurs réelles comparables. Il est alors possible d'étudier la convergence du front de pareto au cours des générations.
     \section{Influence du paramétrage}
     \section{NSGA III}
 
 
   \chapter{Conclusion}
    + Il existe d'autre algo utilisés : http://www.laas.fr/files/MOGISA/sem_Alain-Berro.pdf p.31
+   + Il faut relier avec le metier ingé
   \appendix
 
   \chapter{Bibliographie}
