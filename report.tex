@@ -8,7 +8,7 @@
 \usepackage{hyperref}
 \usepackage{geometry}
 \usepackage{wrapfig}
-\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\geometry{hmargin=1.5cm,vmargin=1.5cm}
 
 \begin{document}
   \begin{titlepage}
@@ -28,6 +28,7 @@
         \hfill
         \includegraphics[height=1.7cm]{logo/usmb.png}
   \end{titlepage}
+  \pagenumbering{Roman}
   \chapter{Préambule}
     \section{Remerciements}
       Ce rapport représente l'aboutissement du projet de 40 heures qui s'est déroulé entre octobre 2018 et avril 2019. Nous tenons tout d'abord à remercier Gilles Fraisse pour son soutien, sa pédagogie, mais aussi pour le temps qu'il a passé à nous accompagner.
@@ -49,6 +50,7 @@
   \tableofcontents
 
   \chapter{Optimisation à objectif unique}
+    \pagenumbering{arabic}
     \section{Algorithme}
       \subsection{Principe}
         \begin{wrapfigure}{r}{6cm}
@@ -81,6 +83,73 @@
     \section{Optimisation unidimensionnelle / multidimensionnelle}.
 
     \section{Influence du paramétrage }
+      Lors de sont éxécution, un algorithme génétique est soumis à un paramétrage préalablement défini par l'utilisateur. Ce paramétrage va agir sur le comportement et sur la capacité de l'algorithme à trouver des solutions de qualité. Dans le cadre de ce projet, c'est la l'influence de ce paramétrage qui nous intéresse, on chercher donc à faire varier les paramètres pour se rendre compte de l'influence qu'ils ont sur l'algorithme.
+
+      \subsection{Protocole}
+        Un programme informatique a été réalisé pour faire varier ces paramètre.
+        ... a expliquer
+
+
+
+      \subsection{Taille de la population}
+        L'éxecution du programme pour la variation de la taille de la population retourne les graphiques suivants :
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=15cm]{img/evo_pop_size_brut.png}
+          \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
+          \label{evo_pop_size_brut}
+        \end{figure}
+
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=15cm]{img/evo_pop_size_moy.png}
+          \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+          \label{evo_pop_size_moy}
+        \end{figure}
+
+        Le graphique \ref{evo_pop_size_brut} représente les données tel qu'elles sortes de notre algorithme, or bien que cette réprésentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers, on obtient alors la figure \ref{evo_pop_size_moy}. \\
+
+        Dans un premier temps on remarque que la première courbe qui a été générée est largement au dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. En réalité quand la population est très faible (Moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
+
+        Dans un second temps, si on met la première courbe de côté, on remarque que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les génération, plus les courbes s'écartent.
+
+        Conclusion : On voit bien
+
+
+
+      \subsection{Probabilité de croisement}
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/evo_crossover_brut.png}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$population = 1000$}
+        \label{evo_crossover_brut}
+      \end{figure}
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/evo_crossover_moy.png}
+        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \label{evo_crossover_moy}
+      \end{figure}
+
+      \subsection{Probabilité de mutation}
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/evo_mutation_brut.png}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \label{evo_mutation_brut}
+      \end{figure}
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/evo_mutation_moy.png}
+        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \label{evo_mutation_moy}
+      \end{figure}
+
 
     \begin{wrapfigure}{r}{10cm}
       \centering
@@ -113,8 +182,14 @@
       + Diff avec algo standard : celui la est élitiste
 
     \section{Méthode de comparaison des résultats}
-      Le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur (ou un n-uplet) avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de pareto géométriquement en calculant l'air, le volume ou l'hypervolume de ce dernier. 
-      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions. [AJOUTER SCH2MA] En [couleur] est représenté le front de pareto de référence et en [coueleur] un front trouvé à l'aide de l'algorithme NSGAII. On pose le point A sur le plan (x,y) et on calcule les aires des front [couelur] et [couelur] en tenant compte du point A. On obtient alors deux valeurs réelles comparables. Il est alors possible d'étudier la convergence du front de pareto au cours des générations.
+      \begin{wrapfigure}{r}{5cm}
+        \centering
+        \includegraphics[width=6cm]{img/hypervolume.png}
+        \caption{Représentation de la méthode de calcul du l'hypervolume}
+        \label{hypervolume}
+      \end{wrapfigure}
+      Le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur (ou un n-uplet) avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de pareto géométriquement en calculant l'air, le volume ou l'hypervolume de ce dernier.
+      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noir représente le front de pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (Peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des front noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de pareto au cours des générations (Plus les valeurs sont semblables, plus la qualité du pareto est bonne).
     \section{Influence du paramétrage}
     \section{NSGA III}
 
@@ -124,7 +199,6 @@
    + Il faut relier avec le metier ingé
   \appendix
 
-  \chapter{Bibliographie}
   \nocite{*} %On affiche toute la Bibliographie
   \bibliographystyle{plain}
   \bibliography{biblio}

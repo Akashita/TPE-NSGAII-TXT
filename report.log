@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.9)  23 APR 2019 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.9)  27 APR 2019 01:53
 entering extended mode
 **./report.tex
 (report.tex
@@ -350,14 +350,14 @@ LaTeX Info: Redefining \up on input line 13.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* h-part:(L,W,R)=(42.67912pt, 528.93675pt, 42.67912pt)
 * v-part:(T,H,B)=(42.67912pt, 709.61174pt, 42.67912pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=472.03123pt
+* \textwidth=528.93675pt
 * \textheight=709.61174pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
 * \topmargin=-66.59087pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -376,12 +376,12 @@ LaTeX Info: Redefining \up on input line 13.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo/polytech.jpg, id=83, 321.8424pt x 95.1555pt>
+<logo/polytech.jpg, id=95, 321.8424pt x 95.1555pt>
 File: logo/polytech.jpg Graphic file (type jpg)
 <use logo/polytech.jpg>
 Package pdftex.def Info: logo/polytech.jpg  used on input line 27.
 (pdftex.def)             Requested size: 163.60216pt x 48.36958pt.
-<logo/usmb.png, id=84, 1546.77875pt x 649.42625pt>
+<logo/usmb.png, id=96, 1546.77875pt x 649.42625pt>
 File: logo/usmb.png Graphic file (type png)
 <use logo/usmb.png>
 Package pdftex.def Info: logo/usmb.png  used on input line 29.
@@ -391,12 +391,7 @@ Package pdftex.def Info: logo/usmb.png  used on input line 29.
 {C:/Users/Akashita/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo/p
 olytech.jpg> <./logo/usmb.png>]
 Chapitre 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.42   \chapter
-               {Introduction} [1
+[1
 
 ]
 Chapitre 2.
@@ -417,124 +412,183 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Chapitre 3.
-<img/schema_algo_single.png, id=133, 280.04625pt x 549.05125pt>
+<img/schema_algo_single.png, id=149, 221.1462pt x 421.21365pt>
 File: img/schema_algo_single.png Graphic file (type png)
 <use img/schema_algo_single.png>
-Package pdftex.def Info: img/schema_algo_single.png  used on input line 56.
-(pdftex.def)             Requested size: 142.26378pt x 278.93169pt.
-<img/crossover.png, id=134, 129.46208pt x 37.17485pt>
+Package pdftex.def Info: img/schema_algo_single.png  used on input line 58.
+(pdftex.def)             Requested size: 142.26378pt x 270.9705pt.
+<img/crossover.png, id=150, 129.46208pt x 37.17485pt>
 File: img/crossover.png Graphic file (type png)
 <use img/crossover.png>
-Package pdftex.def Info: img/crossover.png  used on input line 71.
+Package pdftex.def Info: img/crossover.png  used on input line 73.
 (pdftex.def)             Requested size: 129.46175pt x 37.17474pt.
-
-Underfull \hbox (badness 1158) in paragraph at lines 59--78
-[][]\T1/cmr/m/n/12 Hormis quelques va-ria-tions dans leur concep-tion,
- []
-
-
-Underfull \hbox (badness 1831) in paragraph at lines 59--78
-\T1/cmr/m/n/12 les al-go-rithmes gé-né-tiques on pra-ti-que-ment tous le
- []
-
-[4
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.85     \section
+                 {Influence du paramÃ©trage } [1
 
  <./img/schema_algo_single.png> <./img/crossover.png>]
-Overfull \hbox (6.76677pt too wide) in paragraph at lines 81--81
-[]\T1/cmr/bx/n/17.28 Optimisation uni-di-men-sion-nelle / mul-ti-di-men-sion-ne
-lle 
+<img/evo_pop_size_brut.png, id=160, 1156.32pt x 608.5134pt>
+File: img/evo_pop_size_brut.png Graphic file (type png)
+<use img/evo_pop_size_brut.png>
+Package pdftex.def Info: img/evo_pop_size_brut.png  used on input line 99.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+<img/evo_pop_size_moy.png, id=161, 1156.32pt x 608.5134pt>
+File: img/evo_pop_size_moy.png Graphic file (type png)
+<use img/evo_pop_size_moy.png>
+Package pdftex.def Info: img/evo_pop_size_moy.png  used on input line 106.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
  []
 
-<img/3,2.png, id=145, 383.031pt x 365.6862pt>
+[2 <./img/evo_pop_size_brut.png>]
+<img/evo_crossover_brut.png, id=175, 1156.32pt x 608.5134pt>
+File: img/evo_crossover_brut.png Graphic file (type png)
+<use img/evo_crossover_brut.png>
+Package pdftex.def Info: img/evo_crossover_brut.png  used on input line 125.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+<img/evo_crossover_moy.png, id=176, 1156.32pt x 608.5134pt>
+File: img/evo_crossover_moy.png Graphic file (type png)
+<use img/evo_crossover_moy.png>
+Package pdftex.def Info: img/evo_crossover_moy.png  used on input line 132.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/evo_mutation_brut.png, id=178, 1156.32pt x 608.5134pt>
+File: img/evo_mutation_brut.png Graphic file (type png)
+<use img/evo_mutation_brut.png>
+Package pdftex.def Info: img/evo_mutation_brut.png  used on input line 141.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+[3 <./img/evo_pop_size_moy.png> <./img/evo_crossover_brut.png>]
+<img/evo_mutation_moy.png, id=187, 1156.32pt x 608.5134pt>
+File: img/evo_mutation_moy.png Graphic file (type png)
+<use img/evo_mutation_moy.png>
+Package pdftex.def Info: img/evo_mutation_moy.png  used on input line 148.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/3,2.png, id=189, 383.031pt x 365.6862pt>
 File: img/3,2.png Graphic file (type png)
 <use img/3,2.png>
-Package pdftex.def Info: img/3,2.png  used on input line 87.
+Package pdftex.def Info: img/3,2.png  used on input line 156.
 (pdftex.def)             Requested size: 170.71652pt x 162.9893pt.
-[5 <./img/3,2.png>]
+[4 <./img/evo_crossover_moy.png> <./img/evo_mutation_brut.png>] [5 <./img/evo_m
+utation_moy.png> <./img/3,2.png>]
 Chapitre 4.
-<img/4,1,1_Pareto_uni.png, id=152, 562.9833pt x 589.7232pt>
+<img/4,1,1_Pareto_uni.png, id=206, 562.9833pt x 589.7232pt>
 File: img/4,1,1_Pareto_uni.png Graphic file (type png)
 <use img/4,1,1_Pareto_uni.png>
-Package pdftex.def Info: img/4,1,1_Pareto_uni.png  used on input line 101.
-(pdftex.def)             Requested size: 142.26378pt x 149.02316pt.
-<img/4,1,1_Pareto.png, id=153, 380.8629pt x 385.9218pt>
+Package pdftex.def Info: img/4,1,1_Pareto_uni.png  used on input line 170.
+(pdftex.def)             Requested size: 170.71652pt x 178.82599pt.
+<img/4,1,1_Pareto.png, id=207, 380.8629pt x 385.9218pt>
 File: img/4,1,1_Pareto.png Graphic file (type png)
 <use img/4,1,1_Pareto.png>
-Package pdftex.def Info: img/4,1,1_Pareto.png  used on input line 107.
-(pdftex.def)             Requested size: 142.26378pt x 144.14911pt.
-[6
+Package pdftex.def Info: img/4,1,1_Pareto.png  used on input line 176.
+(pdftex.def)             Requested size: 170.71652pt x 172.98012pt.
+<img/hypervolume.png, id=208, 562.9833pt x 589.7232pt>
+File: img/hypervolume.png Graphic file (type png)
+<use img/hypervolume.png>
+Package pdftex.def Info: img/hypervolume.png  used on input line 187.
+(pdftex.def)             Requested size: 170.71652pt x 178.82599pt.
 
- <./img/4,1,1_Pareto_uni.png> <./img/4,1,1_Pareto.png>]
-Chapitre 5.
-report.tex:121: Missing $ inserted
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-report.tex:122: Missing $ inserted
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (20.85155pt too wide) in paragraph at lines 121--122
-[]\T1/cmr/m/n/12 + Il existe d'autre algo uti-li-sés : http ://www.laas.fr/file
-s/MOGISA/sem$[]\OML/cmm/m/it/12 lain \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 Berro:
-pdfp:\OT1/cmr/m/n/12 31$ 
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 187--188
+ [][] 
  []
 
-[7
 
-]
-Annexe A.
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\T1/cmr/m/sc/12 Figure \T1/cmr/m/n/12 4.3 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+[]\T1/cmr/m/n/12 Représentation de la
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--188
+\T1/cmr/m/n/12 mé-thode de cal-cul du
+ []
+
+[6
+
+ <./img/4,1,1_Pareto_uni.png> <./img/4,1,1_Pareto.png> <./img/hypervolume.png>]
+ [7]
+Chapitre 5.
+report.tex:198: Missing $ inserted
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 199.
+
+report.tex:200: Missing $ inserted
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no é in font cmr12!
 (report.bbl [8
 
 ]
-Overfull \hbox (2.17528pt too wide) in paragraph at lines 20--22
-[]\T1/cmr/m/n/12 Test func-tions for op-ti-mi-za-tion.  en.wikipedia.org/wiki/T
-est_functions_for_optimization. 
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
+[]\T1/cmr/m/n/12 Alain Berro.  Al-go-rithme évo-lu-tion-naire pour l'op-ti-mi-s
+a-tion mul-tiob-jec-tif.
  []
 
 ) [9
 
 ]
-Annexe B.
+Annexe A.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 130.
+(hyperref)                than one, level fixed on input line 207.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 133.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 210.
 
 (C:\Users\Akashita\Documents\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 132--134
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
 [10
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 6847F455A932100DBD0D4CB5E55127C8;1275.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
+(rerunfilecheck)             Checksum: D61F66703645CCB08BFF670F738F3C77;1530.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
- 7209 strings out of 492946
- 106235 string characters out of 3132462
- 210564 words of memory out of 3000000
- 10967 multiletter control sequences out of 15000+200000
+ 7279 strings out of 492946
+ 107641 string characters out of 3132462
+ 212691 words of memory out of 3000000
+ 11013 multiletter control sequences out of 15000+200000
  14328 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,7n,31p,620b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,7n,31p,650b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Akashita\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi6
 00\ectt1200.pk> <C:\Users\Akashita\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkn
 appen/ec/dpi600\eccc1200.pk> <C:\Users\Akashita\AppData\Local\MiKTeX\2.9\fonts/
@@ -551,9 +605,9 @@ ts/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Akashita/Document
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Akashita/Documents/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Akashita/Documents/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on report.pdf (11 pages, 622376 bytes).
+Output written on report.pdf (14 pages, 3234257 bytes).
 PDF statistics:
- 564 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 641 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 255 words of extra memory for PDF output out of 10000 (max. 10000000)
 

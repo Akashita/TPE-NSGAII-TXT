@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{wiki2}
 Algorithme génétique.
@@ -20,9 +20,30 @@ Optimisation (mathématiques).
 Test functions for optimization.
 \newblock en.wikipedia.org/wiki/Test\_functions\_for\_optimization.
 
+\bibitem{diapo}
+Alain Berro.
+\newblock Algorithme évolutionnaire pour l'optimisation multiobjectif.
+\newblock www.laas.fr/files/MOGISA/sem\_Alain-Berro.pdf.
+
+\bibitem{culiolo}
+Jean-Christophe Culioli.
+\newblock {\em Introduction à l'optimisation}.
+\newblock 2012.
+
 \bibitem{darwin}
 Charles Darwin.
 \newblock {\em L'Origine des espèces}.
 \newblock 1862.
+
+\bibitem{nsga2}
+Kamal~Mohammedi Idir~Belaidi, Brahim~Merdjadoui.
+\newblock {\em Un modèle sur les algorithmes génétiques et le front de
+  pareto pour l'optimisation multi-objectif}.
+\newblock PhD thesis, Université M'Hamed Bougara de Boumerdes, 2007.
+
+\bibitem{prog_math}
+Michel Minoux.
+\newblock {\em Programmation mathématique}.
+\newblock 2007.
 
 \end{thebibliography}
