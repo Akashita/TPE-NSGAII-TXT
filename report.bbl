@@ -4,6 +4,10 @@
 Algorithme génétique.
 \newblock fr.wikipedia.org/wiki/Algorithme\_génétique.
 
+\bibitem{inspyred}
+Bibliothèque python inspyred.
+\newblock aarongarrett.github.io/inspyred/.
+
 \bibitem{wiki4}
 Mathematical optimization.
 \newblock en.wikipedia.org/wiki/Mathematical\_optimization.
@@ -11,6 +15,10 @@ Mathematical optimization.
 \bibitem{wiki3}
 Multi-objective optimization.
 \newblock en.wikipedia.org/wiki/Multi-objective\_optimization.
+
+\bibitem{wiki6}
+Mutation.
+\newblock en.wikipedia.org/wiki/Mutation\_(genetic\_algorithm).
 
 \bibitem{wiki1}
 Optimisation (mathématiques).
@@ -34,6 +42,11 @@ Jean-Christophe Culioli.
 Charles Darwin.
 \newblock {\em L'Origine des espèces}.
 \newblock 1862.
+
+\bibitem{nsga2_2}
+Kalyanmoy Deb.
+\newblock A fast and elitist multiobjective genetic algorithm:nsga-ii.
+\newblock ieeexplore.ieee.org/document/996017.
 
 \bibitem{nsga2}
 Kamal~Mohammedi Idir~Belaidi, Brahim~Merdjadoui.

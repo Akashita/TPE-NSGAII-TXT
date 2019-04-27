@@ -187,6 +187,16 @@ INPUT .\img\4,1,1_Pareto.png
 INPUT .\img\4,1,1_Pareto.png
 INPUT .\img\4,1,1_Pareto.png
 INPUT .\img\4,1,1_Pareto.png
+INPUT img\pareto_domine.png
+INPUT .\img\pareto_domine.png
+INPUT .\img\pareto_domine.png
+INPUT .\img\pareto_domine.png
+INPUT .\img\pareto_domine.png
+INPUT img\sch_nsga2.png
+INPUT .\img\sch_nsga2.png
+INPUT .\img\sch_nsga2.png
+INPUT .\img\sch_nsga2.png
+INPUT .\img\sch_nsga2.png
 INPUT img\hypervolume.png
 INPUT .\img\hypervolume.png
 INPUT .\img\hypervolume.png

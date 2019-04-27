@@ -52,8 +52,8 @@
     objectif :
     individus :
     solution optimale :
-    pareto :
-    paretor de référence :
+    Pareto :
+    Paretor de référence :
     extremum local :
 
 
@@ -184,25 +184,69 @@
 
   \chapter{Optimisation à objectifs multiples}
     \section{Algorithme - NSGAII}
-    L'algorithmes d'optimisation NSGAII (Non dominated sorting genetic algorithm) est un algorithme connu et utilisé à l'échelle mondiale.
-    + Multi obj
+    L'algorithmes d'optimisation NSGAII (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithme diffère du premier que nous avons présenté de par le nombre d'objectif qu'il peut prendre en paramètre. Quant bien le premier algorithme ne pouvait chercher une solution que sur un problème mono-objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
+
+    \begin{figure}[h]
+      \begin{minipage}[c]{.46\linewidth}
+          \centering
+          \includegraphics[width=6cm]{img/4,1,1_Pareto_uni.png}
+          \caption{Front de Pareto du problème Schaffer N\degre1 \cite{wiki5} (bi-objectif)}
+          \label{sch}
+      \end{minipage}
+      \hfill%
+      \begin{minipage}[c]{.46\linewidth}
+          \centering
+          \includegraphics[width=6cm]{img/4,1,1_Pareto.png}
+          \caption{Front de Pareto du problème DTLZ7 (tri-objectif)}
+      \end{minipage}
+    \end{figure}
+
+    Le front de Pareto est une représentation graphique (figure \ref{sch}) de l'affirmation suivante :
+    \begin{quotation}
+      Il n'est pas possible d'ameliorer la qualité de solution d'un objectif sans faire baisser celles des autres.}.
+    \end{quotation}
+
+    \emph{Remarque : Le front de Pareto ne donne pas directement les solutions du problème, car il s'agit de la représentation des images des solutions. Le but ici est de choisir un point sur le front de Pareto et d'aller chercher ensuite son(es) antécédent(s) pour chaque objectif.}
+
+    \begin{quotation}
+      Exemple : Dans le cas d'un problème bi-objectif unidimentionel, pour un point $(a,b)$ sur le front de Pareto, la solution du problème est le doublet $(x,y)$ tel que $f(x)=a$ et $g(y)=b$.
+    \end{quotation}
+
+    Contrairement au premier algorithme qui ne retournait qu'une unique solution, la méthode NSGA-II offre un degré de liberté supplémentaire à son utilisteur. En effet, au vu de la multitude de point sur le front de Pareto, on peut se demander lequel retenir définitivement.
+    \emph{A TERMINER}
+
       \subsection{Principe}
+      \begin{wrapfigure}{r}{7cm}
+        \centering
+        \includegraphics[width=6cm]{img/Pareto_domine.png}
+        \caption{Front de Pareto - individus dominés/non dominés}
+        \label{non_domine}
+      \end{wrapfigure}
+      L'algorithme NSGA-II reprend le principe de l'algorithme présenté dans la première partie, mais comporte quelques caractéristiques supplémentaires.
+
+
+      \begin{description}
+        \item [Approche élitiste] L'algorithme sauvegarde les meilleurs solutions des générations précédentes (= préservation de la diversité)
+        \item [Non domination] L'algorithme tri les individus selon un ordre croissant de non-domination (Voir figure \ref{non_domine})
+        \item [Croisement linéaire] Contrairement au croisement à n points du premier algorithme, les portions caractéristiques de chaque individus sont échangées aléatoirement et non par segment.
+        \item [Mutation personnalisé] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisé du fait de sa popularité après des utilisateurs de la bibliothèque Inspyred.
+      \end{description}
+
       \begin{figure}[h]
-        \begin{minipage}[c]{.46\linewidth}
-            \centering
-            \includegraphics[width=6cm]{img/4,1,1_Pareto_uni.png}
-            \caption{Légende}
-        \end{minipage}
-        \hfill%
-        \begin{minipage}[c]{.46\linewidth}
-            \centering
-            \includegraphics[width=6cm]{img/4,1,1_Pareto.png}
-            \caption{Légende}
-        \end{minipage}
+        \centering
+        \includegraphics[width=12cm]{img/sch_nsga2.png}
+        \caption{Schéma de fonctionnement NSGA2}
+        \label{sch_nsga2}
       \end{figure}
 
+      \emph{La figure \ref{sch_nsga2} schématise le fonctionnement de l'algorithme}
+      \begin{enumerate}
+        \item Initialement, une population d'individus est formée aléatoirement puis est triée sur le principe de non-domination.
+        \item Les individus résulants forment la population $P_{t}$ (figure \ref{sch_nsga2}) qui se dédouble en $Q_{t}$ par croisement et mutation.
+        \item L'ensemble $R_{t}$ est ensuite trié toujours sur le principe de non-domination, puis divisé en deux (En rejetant les individus à l'indice de domination trop élevé).
+        \item On se retrouve alors avec une population $P_{t+1}$ prête à retourner à l'étape 2.
+      \end{enumerate}
 
-      + Diff avec algo standard : celui la est élitiste
 
     \section{Méthode de comparaison des résultats}
       \begin{wrapfigure}{r}{5cm}
@@ -211,9 +255,16 @@
         \caption{Représentation de la méthode de calcul du l'hypervolume}
         \label{hypervolume}
       \end{wrapfigure}
-      Le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur (ou un n-uplet) avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de pareto géométriquement en calculant l'air, le volume ou l'hypervolume de ce dernier.
-      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noir représente le front de pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (Peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des front noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de pareto au cours des générations (Plus les valeurs sont semblables, plus la qualité du pareto est bonne).
+      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
+      Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plue généralement l'hypervolume de ce dernier.
+      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noir représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (Peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des front noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (Plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
+      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur le qualité de la solution. La seul différence notable avec la première observation est que dans cette partie elle est basée sur l'évolution de l'hypervolume et non plus de la solution directement.
+      \subsection{Taille de la population}
+      \subsection{Probabilité de croisement}
+      \subsection{Probabilité de mutation}
+
+
     \section{NSGA III}
 
 
