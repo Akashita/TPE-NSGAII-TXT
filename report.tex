@@ -44,10 +44,19 @@
     Selon la \emph{Théorie de l'évolution} \cite{darwin} de Charles Darwin, l'évolution des espèces est issue de mutations aléatoires qui surviennent lors de la conception d'une nouvelle génération d'individus. Si cette mutation permet à l'individus d'être plus adapté à son milieu de vie, alors il aura plus de chance d'atteindre l'age adulte et d'engendrer une nouvelle génération.
     Les algorithmes génétiques sont une application directe du darwinisme à l'informatique.\\
     De nos jours, ces algorithmes permettent de résoudre des problèmes d'optimisation, c'est à dire de maximiser ou minimiser numériquement une ou plusieurs fonctions.
-    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingéniérie ou on cherche dans de très nombreux cas à
-
+    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingéniérie ou on cherche dans de très nombreux cas à minismier plusieurs problèmes à la fois à obtenir un solution de qualité dans un laps de temps court.\\
+    Ce rapport présente deux types d'algorithme génétique différents, le premier est adapaté à une optmisation mono-objectif (un seul problème), alors que l'autre l'est pour des problèmes multiobjectifs. Pour chacun des deux algorithmes nous détaillerons à la fois le principe de résolution, mais aussi l'influence du paramétrage.
 
   \tableofcontents
+  \chapter{Quelques définitions}
+    objectif :
+    individus :
+    solution optimale :
+    pareto :
+    paretor de référence :
+    extremum local :
+
+
 
   \chapter{Optimisation à objectif unique}
     \pagenumbering{arabic}
@@ -59,62 +68,80 @@
           \caption{Fonctionnement}
         \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques on pratiquement tous le même principe de fonctionnement.
-        Le logigramme ci-joint illustre le fonctionnement de base de l'algorithme.
-        Tout d'abord on génère de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
-        Chaque individus de cette population est alors évalué, on lui attribut donc une valeur qui va déterminer sa position par rapport à la solution optimale recherchée.
-        Une selection est alors effectuée en gardant les meilleurs résultats, mais aussi en en gardant un certain poucentage de de valeurs considérée comme de moyenne/faible qualité. Cette dernière opération permet à l'algorithme de ne pas ... dans un extremum local.
-        A partir de cette séléction, l'algorithme va ensuite procéder à deux étapes : \\
-        Le croisement (Crossover) :
-        Il consiste à partager (croiser) les particulartiés de deux individus parents pour engendrer une petite population d'individus conservant ces mêmes particularités. A noter qu'il existe plusieurs méthodes de croisement (un point / deux points)... .
-        On retrouve cette opération en biologie sous le nom de "brassage génétique".
-        (Principe d'héridité de la théorie de Darwin)
-        \begin{figure}
-          \centering
-          \includegraphics{img/crossover.png}
-          \caption{Crossover}
-        \end{figure}
-        \\
-        La mutation :
-        Contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette oprération complète l'opération de séléction précédement évoquée afin d'éviter de tomber dans un extremum local.
-        (Principe de variation de la théorie de Darwin)
-
-
+        Le logigramme ci-joint illustre le fonctionnement de base de l'algorithme d'un algorithme mono-objectif.
+        On commence par génèrer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
+        Chaque individus de cette population est alors évalué, on lui attribut une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
+        Une selection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre-autre à l'algorithme de ne pas tomber dans un extremum local.
+        A partir de cette séléction, l'algorithme va procéder à deux étapes :
+        \begin{enumerate}
+          \item Le croisement (Crossover) :
+          il consiste à partager (croiser) les particulartiés de deux individus parents pour engendrer une nouvelle population d'individus conservant ces mêmes particularités. A noter qu'il existe plusieurs méthodes de croisement (un point / deux points ... etc) qui vont déterminer le nombre de points de rotation dans l'individus (Voir figure \ref{sch_crossover}).
+          \emph{Remarque : On retrouve cette opération en biologie sous le nom de "brassage génétique" qui illustre le Principe d'héridité de la théorie de Darwin \cite{darwin}.}
+          \begin{figure}[h]
+            \centering
+            \includegraphics{img/crossover.png}
+            \caption{Analogie binaire d'un croisement à 3 points de rotation}
+            \label{sch_crossover}
+          \end{figure}
+          \item La mutation :
+          contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette oprération complète l'opération de séléction précédement évoquée afin d'éviter de tomber dans un extremum local.
+          \emph{Remqarque : cette opération illutsre le Principe de variation de la théorie de Darwin en biologie \cite{darwin}.}
+        \end{enumerate}
 
     \section{Optimisation unidimensionnelle / multidimensionnelle}.
+      \begin{wrapfigure}{r}{7cm}
+        \centering
+        \includegraphics[width=6cm]{img/3,2.png}
+        \caption{Fonction Griwank \cite{wiki5} en bleu, solution de l'algorithme en rouge}
+        \label{ex_r2}
+      \end{wrapfigure}
+      Bien que l'obtimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variable, on parle alors d'optimisation multidimensionnelle ($\mathbb{R}^n \rightarrow \mathbb{R}$). Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
 
     \section{Influence du paramétrage }
-      Lors de sont éxécution, un algorithme génétique est soumis à un paramétrage préalablement défini par l'utilisateur. Ce paramétrage va agir sur le comportement et sur la capacité de l'algorithme à trouver des solutions de qualité. Dans le cadre de ce projet, c'est la l'influence de ce paramétrage qui nous intéresse, on chercher donc à faire varier les paramètres pour se rendre compte de l'influence qu'ils ont sur l'algorithme.
+      Lors de sont exécution, un algorithme génétique est soumis à un paramétrage préalablement défini par l'utilisateur. Ce paramétrage va agir sur le comportement et sur la capacité de l'algorithme à trouver des solutions de qualité. Dans le cadre de ce projet, c'est la l'influence de ce paramétrage qui nous intéresse, on chercher donc à faire varier les paramètres pour se rendre compte de l'influence qu'ils ont sur l'algorithme.
 
       \subsection{Protocole}
-        Un programme informatique a été réalisé pour faire varier ces paramètre.
-        ... a expliquer
-
-
+        \begin{wrapfigure}{r}{7cm}
+          \centering
+          \includegraphics[width=6cm]{img/ackley.png}
+          \caption{Fonction Ackley \cite{wiki5}}
+          \label{ackley}
+        \end{wrapfigure}
+        \begin{itemize}
+          \item Dans cette partie la fonction dont on cherche le minimum se nommme Ackley et est définie tel que :
+          $$
+          \left\{
+            \begin{array}{ll}
+               \forall x,y \in [-5,5], f(x,y) = -20 * e^{-0.2\sqrt{0.5(x^2+y^2)}} $$ \\
+               Solution : f(0,0) = 0 $$
+            \end{array}
+          \right.
+          $$
+          \item Un programme informatique a été réalisé pour faire varier ces paramètre automatiquement.
+        \end{itemize}
 
       \subsection{Taille de la population}
-        L'éxecution du programme pour la variation de la taille de la population retourne les graphiques suivants :
+        L'exécution du programme pour la variation de la taille de la population retourne les graphiques des figures \ref{evo_pop_size_brut} et \ref{evo_pop_size_moy}.
 
         \begin{figure}[h]
           \centering
-          \includegraphics[width=15cm]{img/evo_pop_size_brut.png}
+          \includegraphics[width=18cm]{img/evo_pop_size_brut.png}
           \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
           \label{evo_pop_size_brut}
         \end{figure}
 
-        \begin{figure}[h]
+        \begin{figure}[!]
           \centering
-          \includegraphics[width=15cm]{img/evo_pop_size_moy.png}
+          \includegraphics[width=18cm]{img/evo_pop_size_moy.png}
           \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
           \label{evo_pop_size_moy}
         \end{figure}
 
-        Le graphique \ref{evo_pop_size_brut} représente les données tel qu'elles sortes de notre algorithme, or bien que cette réprésentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers, on obtient alors la figure \ref{evo_pop_size_moy}. \\
+        Le premier graphique (\ref{evo_pop_size_brut}) représente les données tel qu'elles sortent de notre algorithme, or bien que cette réprésentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers, on obtient alors la figure \ref{evo_pop_size_moy}. \\
 
-        Dans un premier temps on remarque que la première courbe qui a été générée est largement au dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. En réalité quand la population est très faible (Moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
+        Dans un premier temps on remarque que la première courbe qui a été générée est largement au dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (Moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
 
-        Dans un second temps, si on met la première courbe de côté, on remarque que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les génération, plus les courbes s'écartent.
-
-        Conclusion : On voit bien
+        Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les génération, plus les courbes s'écartent.
 
 
 
@@ -127,7 +154,7 @@
         \label{evo_crossover_brut}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}[!]
         \centering
         \includegraphics[width=15cm]{img/evo_crossover_moy.png}
         \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
@@ -143,7 +170,7 @@
         \label{evo_mutation_brut}
       \end{figure}
 
-      \begin{figure}[h]
+      \begin{figure}[!]
         \centering
         \includegraphics[width=15cm]{img/evo_mutation_moy.png}
         \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
@@ -151,11 +178,7 @@
       \end{figure}
 
 
-    \begin{wrapfigure}{r}{10cm}
-      \centering
-      \includegraphics[width=6cm]{img/3,2.png}
-      \caption{Fonctionnement}
-    \end{wrapfigure}
+
 
 
 
@@ -197,6 +220,7 @@
   \chapter{Conclusion}
    + Il existe d'autre algo utilisés : http://www.laas.fr/files/MOGISA/sem_Alain-Berro.pdf p.31
    + Il faut relier avec le metier ingé
+
   \appendix
 
   \nocite{*} %On affiche toute la Bibliographie
