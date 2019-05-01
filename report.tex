@@ -44,7 +44,7 @@
     Selon la \emph{Théorie de l'évolution} \cite{darwin} de Charles Darwin, l'évolution des espèces est issue de mutations aléatoires qui surviennent lors de la conception d'une nouvelle génération d'individus. Si cette mutation permet à l'individu d'être plus adapté à son milieu de vie, alors il aura plus de chances d'atteindre l'âge adulte et d'engendrer une nouvelle génération.
     Les algorithmes génétiques sont une application directe du darwinisme à l'informatique.\\
     De nos jours, ces algorithmes permettent de résoudre des problèmes d'optimisation, c'est-à-dire de maximiser ou de minimiser numériquement une ou plusieurs fonctions.
-    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingénierie ou on cherche dans de très nombreux cas à minimiser plusieurs problèmes à la fois et à obtenir uns solution de qualité dans un laps de temps court.\\
+    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingénierie ou on cherche dans de très nombreux cas à minimiser plusieurs problèmes à la fois et à obtenir une solution de qualité dans un laps de temps court.\\
     Ce rapport présente deux types d'algorithme génétique différents, le premier est adapté à une optimisation mono-objectif (un seul problème), alors que l'autre l'est pour des problèmes multiobjectifs. Pour chacun des deux algorithmes nous détaillerons à la fois le principe de résolution, mais aussi l'influence du paramétrage.
 
   \tableofcontents
@@ -127,7 +127,7 @@
 
           \item Dans un second temps, afin d'obtenir des courbes exploitables on réalise la moyenne de tous les fichiers obtenus pour un même problème.
 
-          \item Et dans un troisième et dernier temps on procède au lissage des courbes moyennes précédemment générées en faisant une seconde moyenne mais cette fois-ci sur un intervalle de génération donné.
+          \item Et dans un troisième et dernier temps on procède au lissage des courbes moyennes précédemment générées en faisant une seconde moyenne directement sur les valeurs des courbes.
         \end{enumerate}
         \end{itemize}
           \begin{figure}[!]
@@ -154,10 +154,10 @@
           \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
           \label{evo_pop_size_moy}
         \end{figure}
-
+        %Le premier graphique représente les données des fichiers,sans lissage. Bien que plus réaliste, celle ci ne permet pas ... La figure suivante, après lissage est alors plus utile et pratique
         Le premier graphique (\ref{evo_pop_size_brut}) représente les données telle qu'elles sortent de notre algorithme, or bien que cette représentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy}. \\
 
-        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
+        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.%Ce ne serait pas plutot qu'avec très peu d'individu une solution valide a très peu de chance d'etre trouvée à cause de l'aléatoire ??
 
         Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les générations, plus les courbes s'écartent.
         \\ L'influence de la taille de la population se déduit donc très facilement : plus on a une population élevée plus le programme va converger vers la solution du problème. On conclut donc que pour obtenir une solution de qualité il est nécessaire de prendre une grande population (au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
@@ -178,7 +178,7 @@
         \label{evo_crossover_moy}
       \end{figure}
 
-      La première courbe correspond à une probabilité de croisement de 0. La solution n'évolue donc pas et est reste au niveau , peu importe le nombre de générations. Ensuite, plus la probabilité de croisement est haute plus la solution optimale est obtenue rapidement.
+      La première courbe correspond à une probabilité de croisement de 0. La solution n'évolue donc pas et est reste au niveau , peu importe le nombre de générations. Ensuite, plus la probabilité de croisement est haute plus la solution optimale est obtenue rapidement. Afin d'obtenir le meilleur résultat le plus rapidement possible, il faut alors choisir une probabilité de croisement proche de 1.
 
       \subsection{Probabilité de mutation}
 
@@ -196,7 +196,7 @@
         \label{evo_mutation_moy}
       \end{figure}
 
-      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. la mutation sert principalement à éviter de se coincer dans un minimum local qui ne serait pas global en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
+      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. la mutation sert principalement à éviter de se coincer dans un minimum local en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
 
 
 
@@ -246,7 +246,7 @@
         \item [Approche élitiste] L'algorithme sauvegarde les meilleures solutions des générations précédentes (préservation de la diversité)
         \item [Non domination] L'algorithme tri les individus selon un ordre croissant de non-domination (Voir figure \ref{non_domine})
         \item [Croisement linéaire] Contrairement au croisement à n points du premier algorithme, les portions caractéristiques de chaque individu sont échangées aléatoirement et non par segment.
-        \item [Mutation personnalisée] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisée du fait de sa popularité après des utilisateurs de la bibliothèque Inspyred.
+        \item [Mutation personnalisée] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisée du fait de sa popularité auprès des utilisateurs de la bibliothèque Inspyred \cite{inspyred}.
       \end{description}
 
       \begin{figure}[h]
@@ -272,8 +272,8 @@
         \caption{Représentation de la méthode de calcul du l'hypervolume}
         \label{hypervolume}
       \end{wrapfigure}
-      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono-objectif. Quand bien on cherchait une et une seule valeur avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
-      Dans le cas présent, pour un problème multiobjectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plus généralement l'hypervolume de ce dernier.
+      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono-objectif. Lorsque l'on cherchait une et une seule valeur avec le premier algorithme, l'objectif est ici de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
+      Dans le cas présent, pour un problème multiobjectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'aire, le volume ou plus généralement l'hypervolume de ce dernier.
       Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noire représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des fronts noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
       \subsection{Protocole}
