@@ -41,17 +41,17 @@
       L'optimisation par algorithme génétique permet d'obtenir de bonnes approximations de résolutions pour différents problèmes (avec un ou plusieurs objectifs). De façon générale, les algorithmes génétiques sont construits de telle façon à ce que l'on puisse faire varier certains paramètres. C'est ces mêmes paramètres qui vont déterminer la qualité et la fiabilité du résultat, mais aussi qui vont faire varier de façon plus ou moins significative le temps de résolution. Il s'agit alors de trouver un juste milieu entre le temps résolution et la fiabilité du résultat.
 
   \chapter{Introduction}
-    Selon la \emph{Théorie de l'évolution} \cite{darwin} de Charles Darwin, l'évolution des espèces est issue de mutations aléatoires qui surviennent lors de la conception d'une nouvelle génération d'individus. Si cette mutation permet à l'individus d'être plus adapté à son milieu de vie, alors il aura plus de chance d'atteindre l'age adulte et d'engendrer une nouvelle génération.
+    Selon la \emph{Théorie de l'évolution} \cite{darwin} de Charles Darwin, l'évolution des espèces est issue de mutations aléatoires qui surviennent lors de la conception d'une nouvelle génération d'individus. Si cette mutation permet à l'individu d'être plus adapté à son milieu de vie, alors il aura plus de chances d'atteindre l'âge adulte et d'engendrer une nouvelle génération.
     Les algorithmes génétiques sont une application directe du darwinisme à l'informatique.\\
-    De nos jours, ces algorithmes permettent de résoudre des problèmes d'optimisation, c'est à dire de maximiser ou de minimiser numériquement une ou plusieurs fonctions.
-    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingéniérie ou on cherche dans de très nombreux cas à minismier plusieurs problèmes à la fois et à obtenir un solution de qualité dans un laps de temps court.\\
-    Ce rapport présente deux types d'algorithme génétique différents, le premier est adapaté à une optmisation mono-objectif (un seul problème), alors que l'autre l'est pour des problèmes multiobjectifs. Pour chacun des deux algorithmes nous détaillerons à la fois le principe de résolution, mais aussi l'influence du paramétrage.
+    De nos jours, ces algorithmes permettent de résoudre des problèmes d'optimisation, c'est-à-dire de maximiser ou de minimiser numériquement une ou plusieurs fonctions.
+    La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingénierie ou on cherche dans de très nombreux cas à minimiser plusieurs problèmes à la fois et à obtenir uns solution de qualité dans un laps de temps court.\\
+    Ce rapport présente deux types d'algorithme génétique différents, le premier est adapté à une optimisation mono-objectif (un seul problème), alors que l'autre l'est pour des problèmes multiobjectifs. Pour chacun des deux algorithmes nous détaillerons à la fois le principe de résolution, mais aussi l'influence du paramétrage.
 
   \tableofcontents
   \chapter{Optimisation à objectif unique}
     \pagenumbering{arabic}
     \begin{description}
-      \item[Définition :] on dit d'un algorithme qu'il est à objectif unique (mono-objectif) s'il ne cherche à optimiser qu'une seule fonction. Dans le cas d'une optimisation qui comprend plusieurs fonctions on parle alors d'algorithmes multi-objectifs.
+      \item[Définition :] on dit d'un algorithme qu'il est à objectif unique (mono-objectif) s'il ne cherche à optimiser qu'une seule fonction. Dans le cas d'une optimisation qui comprend plusieurs fonctions on parle alors d'algorithmes multiobjectifs.
     \end{description}
     \section{Algorithme}
       \subsection{Principe}
@@ -62,13 +62,13 @@
         \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques ont pratiquement tous le même principe de fonctionnement.
         Le logigramme ci-joint illustre le fonctionnement de base d'un algorithme mono-objectif.
-        On commence par génèrer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
-        Chaque individus de cette population est alors évalué, on lui attribut une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
-        Une selection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre-autre à l'algorithme de ne pas tomber dans un extremum local.
-        A partir de cette sélection, l'algorithme va procéder à deux étapes :
+        On commence par générer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
+        Chaque individu de cette population est alors évalué, on lui attribue une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
+        Une sélection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre autres à l'algorithme de ne pas tomber dans un extremum local.
+        À partir de cette sélection, l'algorithme va procéder à deux étapes :
 
         Le croisement (Crossover) :
-          il consiste à partager (croiser) les particulartiés de deux individus parents pour engendrer une nouvelle population d'individus conservant ces mêmes particularités. A noter qu'il existe plusieurs méthodes de croisement (linéaire, à n points, ... etc) qui ont chacunes leur particularités. Dans notre cas c'est le croisement à 3 points de rotation qui est utilisé, son fonctionnement est expliqué par la figure \ref{sch_crossover}.
+          il consiste à partager (croiser) les particularités de deux individus parents pour engendrer une nouvelle population d'individus conservant ces mêmes particularités. À noter qu'il existe plusieurs méthodes de croisement (linéaire, à n points, ... etc) qui ont chacune leurs particularités. Dans notre cas c'est le croisement à 3 points de rotation qui est utilisé, son fonctionnement est expliqué par la figure \ref{sch_crossover}.
           \emph{Remarque : On retrouve cette opération en biologie sous le nom de "brassage génétique" qui illustre le principe d'héridité de la théorie de Darwin \cite{darwin}.}
           \begin{figure}[h]
             \centering
@@ -78,11 +78,11 @@
           \end{figure}
 
         La mutation \cite{wiki6} :
-          contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette oprération complète l'opération de séléction précédement évoquée afin d'éviter de tomber dans un extremum local.
-          \emph{Remqarque : cette opération illutsre le Principe de variation de la théorie de Darwin \cite{darwin}.}
+          contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette opération complète l'opération de sélection précédemment évoquée afin d'éviter de tomber dans un extremum local.
+          \emph{Remarque : cette opération illustre le principe de variation de la théorie de Darwin \cite{darwin}.}
 
     \section{Optimisation unidimensionnelle / multidimensionnelle}.
-      Bien que l'obtimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variable, on parle alors d'optimisation multidimensionnelle ($\mathbb{R}^n \rightarrow \mathbb{R}$). Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
+      Bien que l'optimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variables, on parle alors d'optimisation multidimensionnelle ($\mathbb{R}^n \rightarrow \mathbb{R}$). Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
 
       \begin{figure}[h]
         \begin{minipage}[c]{.46\linewidth}
@@ -102,7 +102,7 @@
 
     \section{Influence du paramétrage }
 
-      Lors de sont exécution, un algorithme génétique est soumis à un paramétrage préalablement défini par l'utilisateur. Ce paramétrage va agir sur le comportement et sur la capacité de l'algorithme à trouver des solutions de qualité. Dans le cadre de ce projet, c'est  l'influence de ce paramétrage qui nous intéresse, on chercher donc à faire varier les paramètres pour se rendre compte de l'influence qu'ils ont sur l'algorithme.
+      Lors de son exécution, un algorithme génétique est soumis à un paramétrage préalablement défini par l'utilisateur. Ce paramétrage va agir sur le comportement et sur la capacité de l'algorithme à trouver des solutions de qualité. Dans le cadre de ce projet, c'est  l'influence de ce paramétrage qui nous intéresse, on cherche donc à faire varier les paramètres pour se rendre compte de l'influence qu'ils ont sur l'algorithme.
 
       \subsection{Protocole}
         \begin{itemize}
@@ -115,19 +115,19 @@
             \end{array}
           \right.
           $$
-          \item Afin d'étudier l'influence des parametres sur la résolution du probleme nous avons réalisés un programme en python qui nous permet de récupérer l'évolution de la solution en fonction du nombre de génération. On fait ensuite varier soit la taille de la population, soit la probabilité de croisement, soit la probabilité de mutation. Nous obtenons alors un ensemble de courbes où chacune des courbes est associée à une valeurs du paramètre sélectionné. Nous pouvons ainsi regarder l'évolution des courbes et déterminer l'influence du paramétrage sur la qualité de la solution et le temps pour l'obtenir.
+          \item Afin d'étudier l'influence des paramètres sur la résolution du problème nous avons réalisé un programme en python qui nous permet de récupérer l'évolution de la solution en fonction du nombre de générations. On fait ensuite varier soit la taille de la population, soit la probabilité de croisement, soit la probabilité de mutation. Nous obtenons alors un ensemble de courbes où chacune des courbes est associée à une valeur du paramètre sélectionné. Nous pouvons ainsi regarder l'évolution des courbes et déterminer l'influence du paramétrage sur la qualité de la solution et le temps pour l'obtenir.
 
-          On défini l'efficacité de la résolution par rapport à la qualité de la solution obtenue et le nombre de générations nécessaires pour obtenir un résultat convenable. Afin d'obtenir ces résultats notre programme est séparé en plusieurs morceaux (Voir figure \ref{logi}).
+          On définit l'efficacité de la résolution par rapport à la qualité de la solution obtenue et le nombre de générations nécessaires pour obtenir un résultat convenable. Afin d'obtenir ces résultats notre programme est séparé en plusieurs morceaux (Voir figure \ref{logi}).
 
           \begin{enumerate}
-          \item Dans un premier temps il nous faut la résolution du probleme en elle même. Nous faisons cela avec la bibliothèque Python Inspyred \cite{inspyred}. Lors d'une résolution du probleme nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population, la probabilité de croisement et la probabilité de mutation.
+          \item Dans un premier temps il nous faut la résolution du problème en elle-même. Nous faisons cela avec la bibliothèque Python Inspyred \cite{inspyred}. Lors d'une résolution du problème nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population, la probabilité de croisement et la probabilité de mutation.
 
-          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer. Notre programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de génération. On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
+          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer. Notre programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de générations. On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
           \emph{Remarque : Afin de passer à l'étape suivante cette partie est réalisé plusieurs fois dans les même conditions}
 
           \item Dans un second temps, afin d'obtenir des courbes exploitables on réalise la moyenne de tous les fichiers obtenus pour un même problème.
 
-          \item Et dans un troisième et dernier temps on procède au lissage des courbes moyennes précédements générées en faisant une seconde moyenne mais cette fois ci sur un intervalle de génération donné.
+          \item Et dans un troisième et dernier temps on procède au lissage des courbes moyennes précédemment générées en faisant une seconde moyenne mais cette fois-ci sur un intervalle de génération donné.
         \end{enumerate}
         \end{itemize}
           \begin{figure}[!]
@@ -155,12 +155,12 @@
           \label{evo_pop_size_moy}
         \end{figure}
 
-        Le premier graphique (\ref{evo_pop_size_brut}) représente les données tel qu'elles sortent de notre algorithme, or bien que cette réprésentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy}. \\
+        Le premier graphique (\ref{evo_pop_size_brut}) représente les données telle qu'elles sortent de notre algorithme, or bien que cette représentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy}. \\
 
-        Dans un premier temps on remarque que la première courbe qui a été générée est largement au dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (Moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
+        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
 
-        Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les génération, plus les courbes s'écartent.
-        \\ L'influence de la taille de la population se déduis donc très facilement : plus on a une population élevée plus le programme va converger vers la solution du problème. On conclu donc que pour obtenir une solution de qualité il est nécessaire de prendre un grande population (Au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
+        Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les générations, plus les courbes s'écartent.
+        \\ L'influence de la taille de la population se déduit donc très facilement : plus on a une population élevée plus le programme va converger vers la solution du problème. On conclut donc que pour obtenir une solution de qualité il est nécessaire de prendre une grande population (au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
 
       \subsection{Probabilité de croisement}
 
@@ -178,7 +178,7 @@
         \label{evo_crossover_moy}
       \end{figure}
 
-      La première courbe correspond à une probabilité de croisement de 0. La solution n'évolue donc pas et est reste au niveau , peu importe le nombre de générations. Ensuite, plus la probabilité de croisement eset haute plus la solution optimale est obtenue rapidement.
+      La première courbe correspond à une probabilité de croisement de 0. La solution n'évolue donc pas et est reste au niveau , peu importe le nombre de générations. Ensuite, plus la probabilité de croisement est haute plus la solution optimale est obtenue rapidement.
 
       \subsection{Probabilité de mutation}
 
@@ -196,13 +196,13 @@
         \label{evo_mutation_moy}
       \end{figure}
 
-      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. la mutation sert principalement à éviter de se coincer dans un minimum local qui ne serait pas global en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramete n'ai aucune influence peut s'expliquer par le fait que le probleme est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
+      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. la mutation sert principalement à éviter de se coincer dans un minimum local qui ne serait pas global en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
 
 
 
   \chapter{Optimisation à objectifs multiples}
     \section{Algorithme - NSGAII}
-    L'algorithmes d'optimisation NSGAII (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithme diffère du premier par le nombre d'objectif qu'il peut prendre en paramètre. Quant bien le premier algorithme ne pouvait chercher une solution que sur un problème mono-objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
+    L'algorithme d'optimisation NSGAII (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono-objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
 
     \begin{figure}[h]
       \begin{minipage}[c]{.46\linewidth}
@@ -221,13 +221,13 @@
 
     Le front de Pareto est une représentation graphique (figure \ref{sch}) de l'affirmation suivante :
     \begin{quotation}
-      Il n'est pas possible d'ameliorer la qualité de solution d'un objectif sans faire baisser celles des autres.
+      Il n'est pas possible d'améliorer la qualité de solution d'un objectif sans faire baisser celles des autres.
     \end{quotation}
 
     \emph{Remarque : Le front de Pareto ne donne pas directement les solutions du problème, car il s'agit de la représentation des images des solutions. Le but ici est de choisir un point sur le front de Pareto et d'aller chercher ensuite son(es) antécédent(s) pour chaque objectif.}
 
     \begin{quotation}
-      Exemple : Dans le cas d'un problème bi-objectif unidimentionel, pour un point $(a,b)$ sur le front de Pareto, la solution du problème est le doublet $(x,y)$ tel que $f(x)=a$ et $g(y)=b$.
+      Exemple : Dans le cas d'un problème bi-objectif unidimentionnel, pour un point $(a,b)$ sur le front de Pareto, la solution du problème est le doublet $(x,y)$ tel que $f(x)=a$ et $g(y)=b$.
     \end{quotation}
 
 
@@ -243,10 +243,10 @@
 
 
       \begin{description}
-        \item [Approche élitiste] L'algorithme sauvegarde les meilleurs solutions des générations précédentes (préservation de la diversité)
+        \item [Approche élitiste] L'algorithme sauvegarde les meilleures solutions des générations précédentes (préservation de la diversité)
         \item [Non domination] L'algorithme tri les individus selon un ordre croissant de non-domination (Voir figure \ref{non_domine})
-        \item [Croisement linéaire] Contrairement au croisement à n points du premier algorithme, les portions caractéristiques de chaque individus sont échangées aléatoirement et non par segment.
-        \item [Mutation personnalisé] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisé du fait de sa popularité après des utilisateurs de la bibliothèque Inspyred.
+        \item [Croisement linéaire] Contrairement au croisement à n points du premier algorithme, les portions caractéristiques de chaque individu sont échangées aléatoirement et non par segment.
+        \item [Mutation personnalisée] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisée du fait de sa popularité après des utilisateurs de la bibliothèque Inspyred.
       \end{description}
 
       \begin{figure}[h]
@@ -259,8 +259,8 @@
       \emph{La figure \ref{sch_nsga2} schématise le fonctionnement de l'algorithme}
       \begin{enumerate}
         \item Initialement, une population d'individus est formée aléatoirement puis est triée sur le principe de non-domination.
-        \item Les individus résulants forment la population $P_{t}$ (figure \ref{sch_nsga2}) qui se dédouble en $Q_{t}$ par croisement et mutation.
-        \item L'ensemble $R_{t}$ est ensuite trié toujours sur le principe de non-domination, puis divisé en deux (En rejetant les individus à l'indice de domination trop élevé).
+        \item Les individus résultants forment la population $P_{t}$ (figure \ref{sch_nsga2}) qui se dédouble en $Q_{t}$ par croisement et mutation.
+        \item L'ensemble $R_{t}$ est ensuite trié toujours sur le principe de non-domination, puis divisé en deux (en rejetant les individus à l'indice de domination trop élevé).
         \item On se retrouve alors avec une population $P_{t+1}$ prête à retourner à l'étape 2.
       \end{enumerate}
 
@@ -272,13 +272,13 @@
         \caption{Représentation de la méthode de calcul du l'hypervolume}
         \label{hypervolume}
       \end{wrapfigure}
-      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
-      Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plus généralement l'hypervolume de ce dernier.
-      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noir représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (Peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des front noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (Plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
+      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono-objectif. Quand bien on cherchait une et une seule valeur avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
+      Dans le cas présent, pour un problème multiobjectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plus généralement l'hypervolume de ce dernier.
+      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noire représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des fronts noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
       \subsection{Protocole}
 
-      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur le qualité de la solution. Les seules différences notables avec la première observation sont :
+      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur la qualité de la solution. Les seules différences notables avec la première observation sont :
       \begin{itemize}
         \item On change de type de problème (multiobjectifs) :
         $$
@@ -295,7 +295,7 @@
 
 
       \subsection{Taille de la population}
-      La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieur à 500, le temps de résolution devient trop important pour exécuter notre programme de varition dans de bonnes conditions (Nombre de génération élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
+      La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieurs à 500, le temps de résolution devient trop important pour exécuter notre programme de variation dans de bonnes conditions (Nombre de générations élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
 
       \begin{figure}[h]
         \centering
@@ -312,17 +312,17 @@
       \end{figure}
 
 
-      Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voir même ne l'influence pas du tout. En effet toutes les courbes convergent très rapidement et de la même façon vers la valeur de référence du problème, on ne dintingue pas différence notable entre la courbe correspondante à 10 individus et celle correspondante à 150 individus.
+      Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voire même ne l'influence pas du tout. En effet toutes les courbes convergent très rapidement et de la même façon vers la valeur de référence du problème, on ne distingue pas différence notable entre la courbe correspondant à 10 individus et celle correspondante à 150 individus.
 
-      On se doute que si nous avons la possibilité de changer la taille de la population c'est que ce paramètre influence forcément le résultat de l'algorithme. Selon nous le constat que nous faisons ci dessus peut s'expliquer de deux façons :
+      On se doute que si nous avons la possibilité de changer la taille de la population c'est que ce paramètre influence forcément le résultat de l'algorithme. Selon nous le constat que nous faisons ci-dessus peut s'expliquer de deux façons :
       \begin{enumerate}
         \item Nous exécutons l'algorithme sur un problème trop simple, ainsi la solution optimale est atteinte très rapidement et gomme au passage toute la partie de convergence des courbes qui nous intéresse.
         \item Nous faisons varier la taille de la population de façon trop peu importante pour observer une différence entre chaque courbe.
       \end{enumerate}
 
-      Pour répondre à ces questions on tente un résolution du problème DTLZ7 nettement plus complexe :
+      Pour répondre à ces questions on tente une résolution du problème DTLZ7 nettement plus complexe :
       [Ecrire le pb]
-      A cause d'un temps important de résolution, on exécute le programme sur seulement une dizaine de générations et une population allant de 10 à 400 avec un pas de 10.
+      À cause d'un temps important de résolution, on exécute le programme sur seulement une dizaine de générations et une population allant de 10 à 400 avec un pas de 10.
       On obtient le résultat de la figure \ref{DTLZ7_pop}.
       \begin{figure}[h]
         \centering
@@ -354,28 +354,13 @@
    + Il existe d'autre algo utilisés : http://www.laas.fr/files/MOGISA/sem_Alain-Berro.pdf p.31
    + Il faut relier avec le metier ingé
 
+   L'ensemble des programmes qui ont été utilisé pour réaliser ce projet sont soumis à la license \emph{GNU General Public License v3.0} et sont donc sont mis à disposition sur notre page GitHub : \\\\
+   \url{https://github.com/Akashita/AG-USMB}
+
   \appendix
 
   \nocite{*} %On affiche toute la Bibliographie
   \bibliographystyle{plain}
   \bibliography{biblio}
-
-  \chapter{Annexes}
-    \subsection{Programme}
-      \paragraph{}
-      L'ensemble des programmes qui ont été utilisé pour réaliser ce projet sont mis à disposition sur notre page GitHub : \\\\
-      \url{https://github.com/Akashita/AG-USMB}
-
-      \paragraph{}
-      Ce travail est soumis à la license \emph{GNU General Public License v3.0}\\ %\emph dit à latex que cette partie est importante
-      Pour plus de détails veuillez vous référer au site gnu.org : \\\\
-      \url{https://www.gnu.org/licenses/gpl-3.0.en.html}
-
-    \subsection{Figures}
-
-
-
-
-
 
 \end{document}

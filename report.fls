@@ -232,11 +232,11 @@ INPUT .\img\DTLZ7_mutation.png
 INPUT .\img\DTLZ7_mutation.png
 INPUT .\img\DTLZ7_mutation.png
 INPUT .\img\DTLZ7_mutation.png
-INPUT report.bbl
-INPUT report.bbl
 INPUT C:\Users\Akashita\Documents\MiKTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\Akashita\Documents\MiKTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\Akashita\Documents\MiKTeX\fonts\tfm\jknappen\ec\ectt1200.tfm
+INPUT report.bbl
+INPUT report.bbl
 INPUT report.aux
 INPUT .\report.out
 INPUT .\report.out

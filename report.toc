@@ -22,8 +22,3 @@
 \contentsline {subsection}{\numberline {4.3.3}Probabilit\IeC {\'e} de croisement}{11}{subsection.4.3.3}% 
 \contentsline {subsection}{\numberline {4.3.4}Probabilit\IeC {\'e} de mutation}{11}{subsection.4.3.4}% 
 \contentsline {chapter}{\numberline {5}Conclusion}{13}{chapter.5}% 
-\contentsline {chapter}{\numberline {A}Annexes}{15}{appendix.A}% 
-\contentsline {subsection}{\numberline {A.0.1}Programme}{15}{subsection.A.0.1}% 
-\contentsline {paragraph}{}{15}{section*.3}% 
-\contentsline {paragraph}{}{15}{section*.4}% 
-\contentsline {subsection}{\numberline {A.0.2}Figures}{15}{subsection.A.0.2}% 
