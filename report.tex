@@ -58,7 +58,7 @@
         \begin{wrapfigure}[22]{r}{6cm}
         \centering
         \includegraphics[width=5cm]{img/schema_algo_single.png}
-        \caption{Fonctionnement}
+        \caption{Fonctionnement type d'un algorithme génétique}
         \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques ont pratiquement tous le même principe de fonctionnement.
         Le logigramme ci-joint illustre le fonctionnement de base d'un algorithme mono-objectif.
@@ -144,7 +144,7 @@
         \begin{figure}[h]
           \centering
           \includegraphics[width=18cm]{img/evo_pop_size_brut.png}
-          \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [100,2000] avec un pas de 100 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
+          \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [0,2000] avec un pas de 100 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
           \label{evo_pop_size_brut}
         \end{figure}
 
@@ -154,10 +154,9 @@
           \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
           \label{evo_pop_size_moy}
         \end{figure}
-        %Le premier graphique représente les données des fichiers,sans lissage. Bien que plus réaliste, celle ci ne permet pas ... La figure suivante, après lissage est alors plus utile et pratique
-        Le premier graphique (\ref{evo_pop_size_brut}) représente les données telle qu'elles sortent de notre algorithme, or bien que cette représentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy}. \\
+        Le premier graphique (\ref{evo_pop_size_brut}) représente les données moyennes des fichiers (sans lissage), or bien que plus réaliste, cette représentation ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy} qui est beaucoup plus lisible. \\
 
-        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.%Ce ne serait pas plutot qu'avec très peu d'individu une solution valide a très peu de chance d'etre trouvée à cause de l'aléatoire ??
+        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Lorsque l'on a une faible taille de population les solutions ont tendance à ne pas évoluer avec le nombre de générations. Cependant ce comportement s'améliore très rapidement avec l'augmentation de la taille de la population. Ceci explique le grand écart entre la population de 10 et la population de 110 individus.
 
         Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les générations, plus les courbes s'écartent.
         \\ L'influence de la taille de la population se déduit donc très facilement : plus on a une population élevée plus le programme va converger vers la solution du problème. On conclut donc que pour obtenir une solution de qualité il est nécessaire de prendre une grande population (au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
@@ -167,14 +166,14 @@
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/evo_crossover_brut.png}
-        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$population = 1000$}
+        \caption{Représentation de la solution au cours des générations - Variation de la probabilité de croisement sur [0,1] avec un pas de 0.1 - Autre paramètres : $P_{mutation} = 0.5$, $population = 1000$}
         \label{evo_crossover_brut}
       \end{figure}
 
       \begin{figure}[!]
         \centering
         \includegraphics[width=15cm]{img/evo_crossover_moy.png}
-        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \caption{Représentation "lissée" de la figure \ref{evo_crossover_brut}}
         \label{evo_crossover_moy}
       \end{figure}
 
@@ -185,14 +184,14 @@
       \begin{figure}[h]
         \centering
         \includegraphics[width=17cm]{img/evo_mutation_brut.png}
-        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$, $P_{crossover} = 0.5$}
         \label{evo_mutation_brut}
       \end{figure}
 
       \begin{figure}[!]
         \centering
         \includegraphics[width=17cm]{img/evo_mutation_moy.png}
-        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \caption{Représentation "lissée" de la figure \ref{evo_mutation_brut}}
         \label{evo_mutation_moy}
       \end{figure}
 
@@ -321,7 +320,15 @@
       \end{enumerate}
 
       Pour répondre à ces questions on tente une résolution du problème DTLZ7 nettement plus complexe :
-      [Ecrire le pb]
+      $$
+      \left\{
+        \begin{array}{ll}
+           f_j(x) = 1/[n/M] \sum{i=[(j-1)n/M]}^[jn/M] x_i , j=1,...,M  \\
+           g_j(x) = f_M(x) + 4f_j(x) - 1 , pour j = 1,...,(M-1) \\
+           g_M(x) = 2f_M(x) + min_{i,j = 1 ; i \neq j}^{M-1}[f_i(x)+f_j(x)] - 1 \ge 0 , 0 \le x_i \le 1, i = 1,...,n
+        \end{array}
+      \right.
+      $$
       À cause d'un temps important de résolution, on exécute le programme sur seulement une dizaine de générations et une population allant de 10 à 400 avec un pas de 10.
       On obtient le résultat de la figure \ref{DTLZ7_pop}.
       \begin{figure}[h]
