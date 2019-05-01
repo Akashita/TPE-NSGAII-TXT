@@ -117,8 +117,23 @@
             \end{array}
           \right.
           $$
-          \item Un programme informatique a été réalisé pour faire varier ces paramètre automatiquement.
+          \item Afin d'étudier l'influence des parametres sur la résolution du probleme nous avons réalisés un programme en python qui nous permet de récupérer l'évolution de la solution en fonction du nombre de génération. On fait ensuite varier soit la taille de la population, soit la probabilité de croisement soit la probabilité de mutation. Nous obtenons alors un ensemble de courbes avec des valeurs de paramètres différents. Nous pouvons ainsi regarder l'évolution des courbes et déterminer l'influence du paramétrage sur la qualité de la solution et le temps pour l'obtenir.
+
+          On défini l'efficacité de la résolution par rapport à la qualité de la solution obtenue et le nombre de générations nécessaires pour obtenir un résultat convenable. Afin d'obtenir des résultats il faut séparer le probleme.
+          Premierement il nous faut la résolution du probleme en elle même. Nous faisons cela avec la bibliothèque python [inspyred]. Lors d'une résolution du probleme nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population pour chaque population, la probabilité de croisement et la probabilité de mutation.
+
+          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer. Le programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de génération.
+
+          On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
+          Afin d'obtenir des courbes exploitables on réalise ensuite une moyenne de tous les fichiers obtenus, puis on finit par éliminer le bruit.
         \end{itemize}
+          \begin{figure}[!]
+            \centering
+            \includegraphics[width=10cm]{img/logigramme.png}
+            \caption{Schéma du traitement des données à la sortie de l'algorithme}
+            \label{logi}
+          \end{figure}
+
 
       \subsection{Taille de la population}
         L'exécution du programme pour la variation de la taille de la population retourne les graphiques des figures \ref{evo_pop_size_brut} et \ref{evo_pop_size_moy}.
@@ -259,12 +274,60 @@
       Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plue généralement l'hypervolume de ce dernier.
       Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noir représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (Peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des front noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (Plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
-      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur le qualité de la solution. La seul différence notable avec la première observation est que dans cette partie elle est basée sur l'évolution de l'hypervolume et non plus de la solution directement.
+      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur le qualité de la solution. La seul différence notable avec la première observation est que dans cette partie elle se base sur l'évolution de l'hypervolume et non plus de la solution directement.
+
+
       \subsection{Taille de la population}
+      La taille de la population dans l'algorithme NSGA-II est un paramètres important car il fait varier de façon significative le temps de résolution du programme. Ainsi, pour une population d'individus supérieur à 500, le temps de résolution devient trop important pour exécuter notre programme de varition dans de bonnes conditions (Nombre de génération élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
+      Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voir même ne l'influence pas du tout. En effet toutes les courbes
+
+
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/pop_size_sch_moy.png}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \label{sch_pop_size_moy}
+      \end{figure}
+
+      \begin{figure}[!]
+        \centering
+        \includegraphics[width=15cm]{img/pop_size_sch_liss.png}
+        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \label{sch_pop_size_liss}
+      \end{figure}
+
+
       \subsection{Probabilité de croisement}
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/crossover_sch_moy.png}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \label{sch_crossover_moy}
+      \end{figure}
+
+      \begin{figure}[!]
+        \centering
+        \includegraphics[width=15cm]{img/crossover_sch_liss.png}
+        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \label{sch_crossover_liss}
+      \end{figure}
+
+
       \subsection{Probabilité de mutation}
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=15cm]{img/mutation_sch_moy.png}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \label{sch_mutation_moy}
+      \end{figure}
 
-
+      \begin{figure}[!]
+        \centering
+        \includegraphics[width=15cm]{img/mutation_sch_liss.png}
+        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \label{sch_mutation_liss}
+      \end{figure}
     \section{NSGA III}
 
 

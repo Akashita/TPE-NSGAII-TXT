@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.9)  28 APR 2019 00:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.9)  1 MAY 2019 14:03
 entering extended mode
 **./report.tex
 (report.tex
@@ -477,89 +477,111 @@ Package wrapfig Warning: Stationary wrapfigure forced to float on input line 12
 
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 12
-3.
+2.
 
-<img/evo_pop_size_brut.png, id=197, 1156.32pt x 608.5134pt>
+[2 <./img/3,2.png>]
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 12
+5.
+
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 12
+7.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 130.
+
+<img/logigramme.png, id=211, 784.73175pt x 516.2487pt>
+File: img/logigramme.png Graphic file (type png)
+<use img/logigramme.png>
+Package pdftex.def Info: img/logigramme.png  used on input line 132.
+(pdftex.def)             Requested size: 284.52756pt x 187.18065pt.
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 13
+8.
+
+<img/evo_pop_size_brut.png, id=214, 1156.32pt x 608.5134pt>
 File: img/evo_pop_size_brut.png Graphic file (type png)
 <use img/evo_pop_size_brut.png>
-Package pdftex.def Info: img/evo_pop_size_brut.png  used on input line 128.
+Package pdftex.def Info: img/evo_pop_size_brut.png  used on input line 143.
 (pdftex.def)             Requested size: 512.1496pt x 269.5109pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 133.
+               Default added (so using `!tbp') on input line 148.
 
-<img/evo_pop_size_moy.png, id=198, 1156.32pt x 608.5134pt>
+<img/evo_pop_size_moy.png, id=215, 1156.32pt x 608.5134pt>
 File: img/evo_pop_size_moy.png Graphic file (type png)
 <use img/evo_pop_size_moy.png>
-Package pdftex.def Info: img/evo_pop_size_moy.png  used on input line 135.
+Package pdftex.def Info: img/evo_pop_size_moy.png  used on input line 150.
 (pdftex.def)             Requested size: 512.1496pt x 269.5109pt.
 
-Underfull \hbox (badness 1009) in paragraph at lines 140--141
-[]\T1/cmr/m/n/12 Le pre-mier gra-phique ([]4.5[]) re-pré-sente les don-nées tel
+Underfull \hbox (badness 1009) in paragraph at lines 155--156
+[]\T1/cmr/m/n/12 Le pre-mier gra-phique ([]4.6[]) re-pré-sente les don-nées tel
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
-[2 <./img/3,2.png> <./img/ackley.png>] [3 <./img/evo_pop_size_brut.png> <./img/
-evo_pop_size_moy.png>]
-<img/evo_crossover_brut.png, id=228, 1156.32pt x 608.5134pt>
+[3 <./img/logigramme.png> <./img/ackley.png>] [4 <./img/evo_pop_size_brut.png> 
+<./img/evo_pop_size_moy.png>]
+<img/evo_crossover_brut.png, id=235, 1156.32pt x 608.5134pt>
 File: img/evo_crossover_brut.png Graphic file (type png)
 <use img/evo_crossover_brut.png>
-Package pdftex.def Info: img/evo_crossover_brut.png  used on input line 152.
+Package pdftex.def Info: img/evo_crossover_brut.png  used on input line 167.
 (pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 157.
+               Default added (so using `!tbp') on input line 172.
 
-<img/evo_crossover_moy.png, id=229, 1156.32pt x 608.5134pt>
+<img/evo_crossover_moy.png, id=236, 1156.32pt x 608.5134pt>
 File: img/evo_crossover_moy.png Graphic file (type png)
 <use img/evo_crossover_moy.png>
-Package pdftex.def Info: img/evo_crossover_moy.png  used on input line 159.
+Package pdftex.def Info: img/evo_crossover_moy.png  used on input line 174.
 (pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
-<img/evo_mutation_brut.png, id=231, 1156.32pt x 608.5134pt>
+<img/evo_mutation_brut.png, id=238, 1156.32pt x 608.5134pt>
 File: img/evo_mutation_brut.png Graphic file (type png)
 <use img/evo_mutation_brut.png>
-Package pdftex.def Info: img/evo_mutation_brut.png  used on input line 168.
+Package pdftex.def Info: img/evo_mutation_brut.png  used on input line 183.
 (pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 173.
+               Default added (so using `!tbp') on input line 188.
 
-<img/evo_mutation_moy.png, id=232, 1156.32pt x 608.5134pt>
+<img/evo_mutation_moy.png, id=239, 1156.32pt x 608.5134pt>
 File: img/evo_mutation_moy.png Graphic file (type png)
 <use img/evo_mutation_moy.png>
-Package pdftex.def Info: img/evo_mutation_moy.png  used on input line 175.
+Package pdftex.def Info: img/evo_mutation_moy.png  used on input line 190.
 (pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
-[4 <./img/evo_crossover_brut.png>] [5 <./img/evo_crossover_moy.png> <./img/evo_
-mutation_brut.png>] [6 <./img/evo_mutation_moy.png>]
+[5 <./img/evo_crossover_brut.png> <./img/evo_crossover_moy.png>] [6 <./img/evo_
+mutation_brut.png> <./img/evo_mutation_moy.png>]
 Chapitre 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
-<img/4,1,1_Pareto_uni.png, id=254, 562.9833pt x 589.7232pt>
+<img/4,1,1_Pareto_uni.png, id=257, 562.9833pt x 589.7232pt>
 File: img/4,1,1_Pareto_uni.png Graphic file (type png)
 <use img/4,1,1_Pareto_uni.png>
-Package pdftex.def Info: img/4,1,1_Pareto_uni.png  used on input line 192.
+Package pdftex.def Info: img/4,1,1_Pareto_uni.png  used on input line 207.
 (pdftex.def)             Requested size: 170.71652pt x 178.82599pt.
-<img/4,1,1_Pareto.png, id=257, 380.8629pt x 385.9218pt>
+<img/4,1,1_Pareto.png, id=260, 380.8629pt x 385.9218pt>
 File: img/4,1,1_Pareto.png Graphic file (type png)
 <use img/4,1,1_Pareto.png>
-Package pdftex.def Info: img/4,1,1_Pareto.png  used on input line 199.
+Package pdftex.def Info: img/4,1,1_Pareto.png  used on input line 214.
 (pdftex.def)             Requested size: 170.71652pt x 172.98012pt.
-report.tex:206: Extra }, or forgotten \endgroup
+report.tex:221: Extra }, or forgotten \endgroup
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -569,56 +591,111 @@ deleted material, e.g., by typing `I$}'.
 [7
 
  <./img/4,1,1_Pareto_uni.png> <./img/4,1,1_Pareto.png>]
-<img/Pareto_domine.png, id=267, 796.29495pt x 589.7232pt>
+<img/Pareto_domine.png, id=270, 796.29495pt x 589.7232pt>
 File: img/Pareto_domine.png Graphic file (type png)
 <use img/Pareto_domine.png>
-Package pdftex.def Info: img/Pareto_domine.png  used on input line 221.
+Package pdftex.def Info: img/Pareto_domine.png  used on input line 236.
 (pdftex.def)             Requested size: 170.71652pt x 126.42807pt.
-<img/sch_nsga2.png, id=270, 411.5375pt x 223.83624pt>
+<img/sch_nsga2.png, id=273, 411.5375pt x 223.83624pt>
 File: img/sch_nsga2.png Graphic file (type png)
 <use img/sch_nsga2.png>
-Package pdftex.def Info: img/sch_nsga2.png  used on input line 237.
+Package pdftex.def Info: img/sch_nsga2.png  used on input line 252.
 (pdftex.def)             Requested size: 341.43306pt x 185.70547pt.
-<img/hypervolume.png, id=273, 562.9833pt x 589.7232pt>
+<img/hypervolume.png, id=276, 562.9833pt x 589.7232pt>
 File: img/hypervolume.png Graphic file (type png)
 <use img/hypervolume.png>
-Package pdftex.def Info: img/hypervolume.png  used on input line 254.
+Package pdftex.def Info: img/hypervolume.png  used on input line 269.
 (pdftex.def)             Requested size: 170.71652pt x 178.82599pt.
 
-Overfull \hbox (28.45274pt too wide) in paragraph at lines 254--255
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 269--270
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 []\T1/cmr/m/sc/12 Figure \T1/cmr/m/n/12 5.5 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 []\T1/cmr/m/n/12 Représentation de la
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 \T1/cmr/m/n/12 mé-thode de cal-cul du
  []
 
-[8 <./img/Pareto_domine.png> <./img/sch_nsga2.png>] [9 <./img/hypervolume.png>]
+[8 <./img/Pareto_domine.png> <./img/sch_nsga2.png>]
+<img/pop_size_sch_moy.png, id=294, 1156.32pt x 608.5134pt>
+File: img/pop_size_sch_moy.png Graphic file (type png)
+<use img/pop_size_sch_moy.png>
+Package pdftex.def Info: img/pop_size_sch_moy.png  used on input line 288.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 293.
+
+<img/pop_size_sch_liss.png, id=295, 1156.32pt x 608.5134pt>
+File: img/pop_size_sch_liss.png Graphic file (type png)
+<use img/pop_size_sch_liss.png>
+Package pdftex.def Info: img/pop_size_sch_liss.png  used on input line 295.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+<img/crossover_sch_moy.png, id=297, 1156.32pt x 608.5134pt>
+File: img/crossover_sch_moy.png Graphic file (type png)
+<use img/crossover_sch_moy.png>
+Package pdftex.def Info: img/crossover_sch_moy.png  used on input line 304.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 309.
+
+<img/crossover_sch_liss.png, id=298, 1156.32pt x 608.5134pt>
+File: img/crossover_sch_liss.png Graphic file (type png)
+<use img/crossover_sch_liss.png>
+Package pdftex.def Info: img/crossover_sch_liss.png  used on input line 311.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+<img/mutation_sch_moy.png, id=300, 1156.32pt x 608.5134pt>
+File: img/mutation_sch_moy.png Graphic file (type png)
+<use img/mutation_sch_moy.png>
+Package pdftex.def Info: img/mutation_sch_moy.png  used on input line 320.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 325.
+
+<img/mutation_sch_liss.png, id=301, 1156.32pt x 608.5134pt>
+File: img/mutation_sch_liss.png Graphic file (type png)
+<use img/mutation_sch_liss.png>
+Package pdftex.def Info: img/mutation_sch_liss.png  used on input line 327.
+(pdftex.def)             Requested size: 426.79134pt x 224.5986pt.
+[9 <./img/hypervolume.png>] [10 <./img/pop_size_sch_moy.png> <./img/pop_size_sc
+h_liss.png>] [11 <./img/crossover_sch_moy.png> <./img/crossover_sch_liss.png>]
+[12 <./img/mutation_sch_moy.png> <./img/mutation_sch_liss.png>]
 Chapitre 6.
-report.tex:272: Missing $ inserted
+report.tex:335: Missing $ inserted
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 273.
+LaTeX Warning: Command \' invalid in math mode on input line 336.
 
-report.tex:274: Missing $ inserted
+report.tex:337: Missing $ inserted
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 Missing character: There is no é in font cmr12!
-(report.bbl [10
+(report.bbl [13
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 32--35
@@ -632,48 +709,48 @@ Underfull \hbox (badness 2343) in paragraph at lines 47--50
 c al-go-rithm :nsga-ii.  ieeex-
  []
 
-) [11
+) [14
 
 ]
 Annexe A.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 282.
+(hyperref)                than one, level fixed on input line 345.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 285.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 348.
 
 (C:\Users\Akashita\Documents\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 284--286
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--291
+Underfull \hbox (badness 10000) in paragraph at lines 351--354
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 299.
-[12
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
+[15
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 299.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 299.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 299.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 8A016D0ECD97C791E9E04119382883F0;1832.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 299.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 362.
  ) 
 Here is how much of TeX's memory you used:
- 7328 strings out of 492946
- 108294 string characters out of 3132462
- 213236 words of memory out of 3000000
- 11040 multiletter control sequences out of 15000+200000
+ 7380 strings out of 492946
+ 109447 string characters out of 3132462
+ 215255 words of memory out of 3000000
+ 11075 multiletter control sequences out of 15000+200000
  14328 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,8n,31p,650b,506s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,31p,651b,506s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Akashita\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi6
 00\ectt1200.pk> <C:\Users\Akashita\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkn
 appen/ec/dpi600\eccc1200.pk> <C:\Users\Akashita\AppData\Local\MiKTeX\2.9\fonts/
@@ -694,9 +771,9 @@ TeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Akashita/Documents/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Akashita/Documents/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Akashita/Documents/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on report.pdf (17 pages, 4950906 bytes).
+Output written on report.pdf (20 pages, 11248359 bytes).
 PDF statistics:
- 758 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
- 302 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 798 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
