@@ -101,7 +101,7 @@
           \label{ackley}
         \end{wrapfigure}
         \begin{itemize}
-          \item Dans cette partie la fonction dont on cherche le minimum se nommme Ackley et est définie tel que :
+          \item Dans cette partie la fonction dont on cherche le minimum se nomme Ackley et est définie tel que :
           $$
           \left\{
             \begin{array}{ll}
@@ -112,17 +112,18 @@
           $$
           \item Afin d'étudier l'influence des parametres sur la résolution du probleme nous avons réalisés un programme en python qui nous permet de récupérer l'évolution de la solution en fonction du nombre de génération. On fait ensuite varier soit la taille de la population, soit la probabilité de croisement, soit la probabilité de mutation. Nous obtenons alors un ensemble de courbes où chacune des courbes est associée à une valeurs du paramètre sélectionné. Nous pouvons ainsi regarder l'évolution des courbes et déterminer l'influence du paramétrage sur la qualité de la solution et le temps pour l'obtenir.
 
-          On défini l'efficacité de la résolution par rapport à la qualité de la solution obtenue et le nombre de générations nécessaires pour obtenir un résultat convenable. Afin d'obtenir des résultats il faut séparer le probleme en plusieurs morceaux.
+          On défini l'efficacité de la résolution par rapport à la qualité de la solution obtenue et le nombre de générations nécessaires pour obtenir un résultat convenable. Afin d'obtenir ces résultats notre programme est séparé en plusieurs morceaux (Voir figure \ref{logi}).
 
-          \begin{itemize}
-          \item Dans un premier temps il nous faut la résolution du probleme en elle même. Nous faisons cela avec la bibliothèque python Inspyred \cite{inspyred}. Lors d'une résolution du probleme nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population pour chaque population, la probabilité de croisement et la probabilité de mutation.
+          \begin{enumerate}
+          \item Dans un premier temps il nous faut la résolution du probleme en elle même. Nous faisons cela avec la bibliothèque Python Inspyred \cite{inspyred}. Lors d'une résolution du probleme nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population, la probabilité de croisement et la probabilité de mutation.
 
-          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer. Notre programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de génération. On réitère cette opération plusieurs fois (Afin d'o)On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
+          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer. Notre programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de génération. On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
+          \emph{Remarque : Afin de passer à l'étape suivante cette partie est réalisé plusieurs fois dans les même conditions}
 
-          \item Dans un second temps, afin d'exploiter les résultats et donc d'obtenir des courbes exploitables on réalise la moyenne de tous les fichiers obtenus pour un même problème.
+          \item Dans un second temps, afin d'obtenir des courbes exploitables on réalise la moyenne de tous les fichiers obtenus pour un même problème.
 
-          \item Et dans un troisième et dernier temps on procède au lissage de
-          \end{itemize}
+          \item Et dans un troisième et dernier temps on procède au lissage des courbes moyennes précédements générées en faisant une seconde moyenne mais cette fois ci sur un intervalle de génération donné.
+        \end{enumerate}
         \end{itemize}
           \begin{figure}[!]
             \centering
@@ -138,7 +139,7 @@
         \begin{figure}[h]
           \centering
           \includegraphics[width=18cm]{img/evo_pop_size_brut.png}
-          \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
+          \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [100,2000] avec un pas de 100 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
           \label{evo_pop_size_brut}
         \end{figure}
 
@@ -149,13 +150,12 @@
           \label{evo_pop_size_moy}
         \end{figure}
 
-        Le premier graphique (\ref{evo_pop_size_brut}) représente les données tel qu'elles sortent de notre algorithme, or bien que cette réprésentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers, on obtient alors la figure \ref{evo_pop_size_moy}. \\
+        Le premier graphique (\ref{evo_pop_size_brut}) représente les données tel qu'elles sortent de notre algorithme, or bien que cette réprésentation soit précise et exacte, elle ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy}. \\
 
         Dans un premier temps on remarque que la première courbe qui a été générée est largement au dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Dans les faits, quand la population est très faible (Moins de 100 individus) la convergence vers une solution de bonne qualité est très rapide, et donc n'est pas représentée de façon optimale sur ce graphique.
 
         Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les génération, plus les courbes s'écartent.
-
-
+        \\ L'influence de la taille de la population se déduis donc très facilement : plus on a une population élevée plus le programme va converger vers la solution du problème. On conclu donc que pour obtenir une solution de qualité il est nécessaire de prendre un grande population (Au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
 
       \subsection{Probabilité de croisement}
 
