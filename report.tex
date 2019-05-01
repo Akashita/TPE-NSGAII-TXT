@@ -55,17 +55,17 @@
     \end{description}
     \section{Algorithme}
       \subsection{Principe}
-        \begin{wrapfigure}{r}{6cm}
-          \centering
-          \includegraphics[width=5cm]{img/schema_algo_single.png}
-          \caption{Fonctionnement}
-        \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques ont pratiquement tous le même principe de fonctionnement.
         Le logigramme ci-joint illustre le fonctionnement de base d'un algorithme mono-objectif.
         On commence par génèrer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
         Chaque individus de cette population est alors évalué, on lui attribut une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
         Une selection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre-autre à l'algorithme de ne pas tomber dans un extremum local.
-        A partir de cette séléction, l'algorithme va procéder à deux étapes :
+        A partir de cette sélection, l'algorithme va procéder à deux étapes :
+        \begin{wrapfigure}[22]{r}{6cm}
+          \centering
+          \includegraphics[width=5cm]{img/schema_algo_single.png}
+          \caption{Fonctionnement}
+        \end{wrapfigure}
         \begin{enumerate}
           \item Le croisement (Crossover) :
           il consiste à partager (croiser) les particulartiés de deux individus parents pour engendrer une nouvelle population d'individus conservant ces mêmes particularités. A noter qu'il existe plusieurs méthodes de croisement (linéaire, à n points, ... etc) qui ont chacunes leur particularités. Dans notre cas c'est le croisement à 3 points de rotation qui est utilisé, son fonctionnement est expliqué par la figure \ref{sch_crossover}.
@@ -82,7 +82,7 @@
         \end{enumerate}
 
     \section{Optimisation unidimensionnelle / multidimensionnelle}.
-      \begin{wrapfigure}{r}{7cm}
+      \begin{wrapfigure}[17]{r}{7cm}
         \centering
         \includegraphics[width=6cm]{img/3,2.png}
         \caption{Fonction Griwank \cite{wiki5} en bleu, solution de l'algorithme en rouge}
@@ -173,6 +173,8 @@
         \label{evo_crossover_moy}
       \end{figure}
 
+      La première courbe correspond à une probabilité de croisement de 0. La solution n'évolue donc pas et est reste au niveau , peu importe le nombre de générations. Ensuite, plus la probabilité de croisement eset haute plus la solution optimale est obtenue rapidement.
+
       \subsection{Probabilité de mutation}
 
       \begin{figure}[h]
@@ -189,8 +191,7 @@
         \label{evo_mutation_moy}
       \end{figure}
 
-
-
+      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. la mutation sert principalement à éviter de se coincer dans un minimum local qui ne serait pas global en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramete n'ai aucune influence peut s'expliquer par le fait que le probleme est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
 
 
 
@@ -215,7 +216,7 @@
 
     Le front de Pareto est une représentation graphique (figure \ref{sch}) de l'affirmation suivante :
     \begin{quotation}
-      Il n'est pas possible d'ameliorer la qualité de solution d'un objectif sans faire baisser celles des autres.}.
+      Il n'est pas possible d'ameliorer la qualité de solution d'un objectif sans faire baisser celles des autres.
     \end{quotation}
 
     \emph{Remarque : Le front de Pareto ne donne pas directement les solutions du problème, car il s'agit de la représentation des images des solutions. Le but ici est de choisir un point sur le front de Pareto et d'aller chercher ensuite son(es) antécédent(s) pour chaque objectif.}
@@ -224,8 +225,7 @@
       Exemple : Dans le cas d'un problème bi-objectif unidimentionel, pour un point $(a,b)$ sur le front de Pareto, la solution du problème est le doublet $(x,y)$ tel que $f(x)=a$ et $g(y)=b$.
     \end{quotation}
 
-    Contrairement au premier algorithme qui ne retournait qu'une unique solution, la méthode NSGA-II offre un degré de liberté supplémentaire à son utilisteur. En effet, au vu de la multitude de point sur le front de Pareto, on peut se demander lequel retenir définitivement.
-    \emph{A TERMINER}
+
 
       \subsection{Principe}
       \begin{wrapfigure}{r}{7cm}
@@ -238,7 +238,7 @@
 
 
       \begin{description}
-        \item [Approche élitiste] L'algorithme sauvegarde les meilleurs solutions des générations précédentes (= préservation de la diversité)
+        \item [Approche élitiste] L'algorithme sauvegarde les meilleurs solutions des générations précédentes (préservation de la diversité)
         \item [Non domination] L'algorithme tri les individus selon un ordre croissant de non-domination (Voir figure \ref{non_domine})
         \item [Croisement linéaire] Contrairement au croisement à n points du premier algorithme, les portions caractéristiques de chaque individus sont échangées aléatoirement et non par segment.
         \item [Mutation personnalisé] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisé du fait de sa popularité après des utilisateurs de la bibliothèque Inspyred.
@@ -268,14 +268,29 @@
         \label{hypervolume}
       \end{wrapfigure}
       Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans la cadre d'une optmisation multi-objectif n'est pas le même que dans un problème mono-objectif. Quant bien on cherchait une et une seule valeur avec le premier algorithme, l'objectif ici est de minimiser plusieurs fonction à la fois. Notre but final étant de d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
-      Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plue généralement l'hypervolume de ce dernier.
+      Dans le cas présent, pour un problème multi-objectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'air, le volume ou plus généralement l'hypervolume de ce dernier.
       Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noir représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (Peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des front noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (Plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
-      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur le qualité de la solution. La seul différence notable avec la première observation est que dans cette partie elle se base sur l'évolution de l'hypervolume et non plus de la solution directement.
+      \subsection{Protocole}
+
+      De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur le qualité de la solution. Les seules différences notables avec la première observation sont :
+      \begin{itemize}
+        \item On change de type de problème (multiobjectifs) :
+        $$
+        \forall x \in [-10,10],
+        \left\{
+          \begin{array}{ll}
+             f_1(x) = x^2 \\
+             f_2(x) = (x-2)^2
+          \end{array}
+        \right.
+        $$
+        \item Les courbes représentent désormais l'évolution de l'hypervolume et non plus l'évolution de la solution directement.
+      \end{itemize}
 
 
       \subsection{Taille de la population}
-      La taille de la population dans l'algorithme NSGA-II est un paramètres important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieur à 500, le temps de résolution devient trop important pour exécuter notre programme de varition dans de bonnes conditions (Nombre de génération élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
+      La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieur à 500, le temps de résolution devient trop important pour exécuter notre programme de varition dans de bonnes conditions (Nombre de génération élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
       Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voir même ne l'influence pas du tout. En effet toutes les courbes convergent très rapidement et de la même façon vers la valeur de référence du problème, on ne dintingue pas différence notable entre la courbe correspondante à 10 individus et celle correspondante à 150 individus.
 
       On se doute que si nous avons la possibilité de changer la taille de la population c'est que ce paramètre influence forcément le résultat de l'algorithme. Selon nous le constat que nous faisons ci dessus peut s'expliquer de deux façons :
