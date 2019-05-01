@@ -55,19 +55,19 @@
     \end{description}
     \section{Algorithme}
       \subsection{Principe}
+        \begin{wrapfigure}[22]{r}{6cm}
+        \centering
+        \includegraphics[width=5cm]{img/schema_algo_single.png}
+        \caption{Fonctionnement}
+        \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques ont pratiquement tous le même principe de fonctionnement.
         Le logigramme ci-joint illustre le fonctionnement de base d'un algorithme mono-objectif.
         On commence par génèrer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
         Chaque individus de cette population est alors évalué, on lui attribut une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
         Une selection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre-autre à l'algorithme de ne pas tomber dans un extremum local.
         A partir de cette sélection, l'algorithme va procéder à deux étapes :
-        \begin{wrapfigure}[22]{r}{6cm}
-          \centering
-          \includegraphics[width=5cm]{img/schema_algo_single.png}
-          \caption{Fonctionnement}
-        \end{wrapfigure}
-        \begin{enumerate}
-          \item Le croisement (Crossover) :
+
+        Le croisement (Crossover) :
           il consiste à partager (croiser) les particulartiés de deux individus parents pour engendrer une nouvelle population d'individus conservant ces mêmes particularités. A noter qu'il existe plusieurs méthodes de croisement (linéaire, à n points, ... etc) qui ont chacunes leur particularités. Dans notre cas c'est le croisement à 3 points de rotation qui est utilisé, son fonctionnement est expliqué par la figure \ref{sch_crossover}.
           \emph{Remarque : On retrouve cette opération en biologie sous le nom de "brassage génétique" qui illustre le principe d'héridité de la théorie de Darwin \cite{darwin}.}
           \begin{figure}[h]
@@ -76,30 +76,35 @@
             \caption{Analogie binaire d'un croisement à 3 points de rotation}
             \label{sch_crossover}
           \end{figure}
-          \item La mutation \cite{wiki6} :
+
+        La mutation \cite{wiki6} :
           contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette oprération complète l'opération de séléction précédement évoquée afin d'éviter de tomber dans un extremum local.
           \emph{Remqarque : cette opération illutsre le Principe de variation de la théorie de Darwin \cite{darwin}.}
-        \end{enumerate}
 
     \section{Optimisation unidimensionnelle / multidimensionnelle}.
-      \begin{wrapfigure}[17]{r}{7cm}
-        \centering
-        \includegraphics[width=6cm]{img/3,2.png}
-        \caption{Fonction Griwank \cite{wiki5} en bleu, solution de l'algorithme en rouge}
-        \label{ex_r2}
-      \end{wrapfigure}
       Bien que l'obtimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variable, on parle alors d'optimisation multidimensionnelle ($\mathbb{R}^n \rightarrow \mathbb{R}$). Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
 
+      \begin{figure}[h]
+        \begin{minipage}[c]{.46\linewidth}
+            \centering
+            \includegraphics[width=6cm]{img/3,2.png}
+            \caption{Fonction Griwank \cite{wiki5} en bleu, solution de l'algorithme en rouge}
+            \label{ex_r2}
+        \end{minipage}
+        \hfill%
+        \begin{minipage}[c]{.46\linewidth}
+            \centering
+            \includegraphics[width=6cm]{img/ackley.png}
+            \caption{Fonction Ackley \cite{wiki5}}
+            \label{ackley}
+        \end{minipage}
+      \end{figure}
+
     \section{Influence du paramétrage }
+
       Lors de sont exécution, un algorithme génétique est soumis à un paramétrage préalablement défini par l'utilisateur. Ce paramétrage va agir sur le comportement et sur la capacité de l'algorithme à trouver des solutions de qualité. Dans le cadre de ce projet, c'est  l'influence de ce paramétrage qui nous intéresse, on chercher donc à faire varier les paramètres pour se rendre compte de l'influence qu'ils ont sur l'algorithme.
 
       \subsection{Protocole}
-        \begin{wrapfigure}{r}{7cm}
-          \centering
-          \includegraphics[width=6cm]{img/ackley.png}
-          \caption{Fonction Ackley \cite{wiki5}}
-          \label{ackley}
-        \end{wrapfigure}
         \begin{itemize}
           \item Dans cette partie la fonction dont on cherche le minimum se nomme Ackley et est définie tel que :
           $$
@@ -179,14 +184,14 @@
 
       \begin{figure}[h]
         \centering
-        \includegraphics[width=15cm]{img/evo_mutation_brut.png}
+        \includegraphics[width=17cm]{img/evo_mutation_brut.png}
         \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
         \label{evo_mutation_brut}
       \end{figure}
 
       \begin{figure}[!]
         \centering
-        \includegraphics[width=15cm]{img/evo_mutation_moy.png}
+        \includegraphics[width=17cm]{img/evo_mutation_moy.png}
         \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
         \label{evo_mutation_moy}
       \end{figure}
@@ -291,6 +296,22 @@
 
       \subsection{Taille de la population}
       La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieur à 500, le temps de résolution devient trop important pour exécuter notre programme de varition dans de bonnes conditions (Nombre de génération élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
+
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=18cm]{img/pop_size_sch_moy.png}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \label{sch_pop_size_moy}
+      \end{figure}
+
+      \begin{figure}[!]
+        \centering
+        \includegraphics[width=18cm]{img/pop_size_sch_liss.png}
+        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \label{sch_pop_size_liss}
+      \end{figure}
+
+
       Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voir même ne l'influence pas du tout. En effet toutes les courbes convergent très rapidement et de la même façon vers la valeur de référence du problème, on ne dintingue pas différence notable entre la courbe correspondante à 10 individus et celle correspondante à 150 individus.
 
       On se doute que si nous avons la possibilité de changer la taille de la population c'est que ce paramètre influence forcément le résultat de l'algorithme. Selon nous le constat que nous faisons ci dessus peut s'expliquer de deux façons :
@@ -302,65 +323,31 @@
       Pour répondre à ces questions on tente un résolution du problème DTLZ7 nettement plus complexe :
       [Ecrire le pb]
       A cause d'un temps important de résolution, on exécute le programme sur seulement une dizaine de générations et une population allant de 10 à 400 avec un pas de 10.
-      On obtient le résultat suivant (figure \ref{DTLZ7_pop}):
-      \begin{figure}[!]
+      On obtient le résultat de la figure \ref{DTLZ7_pop}.
+      \begin{figure}[h]
         \centering
-        \includegraphics[width=5cm]{img/DTLZ7_pop.png}
+        \includegraphics[width=15cm]{img/DTLZ7_pop.png}
         \caption{}
         \label{DTLZ7_pop}
       \end{figure}
 
-      On
-
-
-
-
-      \begin{figure}[h]
-        \centering
-        \includegraphics[width=15cm]{img/pop_size_sch_moy.png}
-        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
-        \label{sch_pop_size_moy}
-      \end{figure}
-
-      \begin{figure}[!]
-        \centering
-        \includegraphics[width=15cm]{img/pop_size_sch_liss.png}
-        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
-        \label{sch_pop_size_liss}
-      \end{figure}
-
-
       \subsection{Probabilité de croisement}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=15cm]{img/crossover_sch_moy.png}
+        \includegraphics[width=15cm]{img/DTLZ7_crossover.png}
         \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
         \label{sch_crossover_moy}
-      \end{figure}
-
-      \begin{figure}[!]
-        \centering
-        \includegraphics[width=15cm]{img/crossover_sch_liss.png}
-        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
-        \label{sch_crossover_liss}
       \end{figure}
 
 
       \subsection{Probabilité de mutation}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=15cm]{img/mutation_sch_moy.png}
+        \includegraphics[width=15cm]{img/DTLZ7_mutation.png}
         \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
         \label{sch_mutation_moy}
       \end{figure}
 
-      \begin{figure}[!]
-        \centering
-        \includegraphics[width=15cm]{img/mutation_sch_liss.png}
-        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
-        \label{sch_mutation_liss}
-      \end{figure}
-    \section{NSGA III}
 
 
   \chapter{Conclusion}
