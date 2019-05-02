@@ -196,13 +196,13 @@
         \label{evo_mutation_moy}
       \end{figure}
 
-      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. La mutation sert principalement à éviter de se coincer dans un minimum local en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
+      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influencer l'efficacité de la résolution. La mutation sert principalement à éviter de se coincer dans un extremum local en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous. Le choix de ce paramètre dépend donc du problème à résoudre, si ce problème comporte de nombreux extremums locaux il est conseillé d'attribuer à ce paramètre une valeur supérieure ou égale à 0.5.
 
 
 
   \chapter{Optimisation à objectifs multiples}
-    \section{Algorithme - NSGAII}
-    L'algorithme d'optimisation NSGAII (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono-objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
+    \section{Algorithme - NSGA-II}
+    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono-objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
 
     \begin{figure}[h]
       \begin{minipage}[c]{.46\linewidth}
@@ -274,7 +274,7 @@
       \end{wrapfigure}
       Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono-objectif. Lorsque l'on cherchait une et une seule valeur avec le premier algorithme, l'objectif est ici de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
       Dans le cas présent, pour un problème multiobjectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'aire, le volume ou plus généralement l'hypervolume de ce dernier.
-      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noire représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGAII (peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des fronts noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
+      Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noire représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGA-II (peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des fronts noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
       \subsection{Protocole}
 
@@ -399,7 +399,7 @@
   \begin{itemize}
     \item Documentation bibliographique portant sur l’optimisation mathématique et sur la notion d’algorithmes génétiques
     \item Conception d’un programme adapté à nos besoins utilisant la bibliothèque python « inspyred »
-    \item Analyse de l’influence du paramétrage sur deux algorithmes différents : mono-objectif et multi-objectif (NSGAII)
+    \item Analyse de l’influence du paramétrage sur deux algorithmes différents : mono-objectif et multi-objectif (NSGA-II)
   \end{itemize}
   \section{Bilan (connaissances ou compétences acquises)}
   La réalisation de ce projet nous a permit de d’approfondir nos connaissances dans le domaine de l’informatique et de l’algorithmie. Ce fut également pour nous une bonne occasion de découvrir les notions d’algorithmes génétiques et d’optimisation mathématique.
