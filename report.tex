@@ -59,9 +59,10 @@
         \centering
         \includegraphics[width=5cm]{img/schema_algo_single.png}
         \caption{Fonctionnement type d'un algorithme génétique}
+        \label{logi}
         \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques ont pratiquement tous le même principe de fonctionnement.
-        Le logigramme ci-joint illustre le fonctionnement de base d'un algorithme mono-objectif.
+        Le logigramme ci-joint \ref{logi} illustre le fonctionnement de base d'un algorithme mono-objectif.
         On commence par générer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
         Chaque individu de cette population est alors évalué, on lui attribue une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
         Une sélection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre autres à l'algorithme de ne pas tomber dans un extremum local.
@@ -81,8 +82,8 @@
           contrairement au croisement qui conserve les particularités des individus au cours des générations, la mutation altère certains individus de manière aléatoire. Cette opération complète l'opération de sélection précédemment évoquée afin d'éviter de tomber dans un extremum local.
           \emph{Remarque : cette opération illustre le principe de variation de la théorie de Darwin \cite{darwin}.}
 
-    \section{Optimisation unidimensionnelle / multidimensionnelle}.
-      Bien que l'optimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variables, on parle alors d'optimisation multidimensionnelle ($\mathbb{R}^n \rightarrow \mathbb{R}$). Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
+    \section{Optimisation unidimensionnelle / multidimensionnelle}
+      Bien que l'optimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variables, on parle alors d'optimisation multidimensionnelle $(\mathbb{R}^n \rightarrow \mathbb{R})$. Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
 
       \begin{figure}[h]
         \begin{minipage}[c]{.46\linewidth}
@@ -111,23 +112,23 @@
           \left\{
             \begin{array}{ll}
                \forall x,y \in [-5,5], f(x,y) = -20 * e^{-0.2\sqrt{0.5(x^2+y^2)}} $$ \\
-               Solution : f(0,0) = 0 $$
+               Solution de référence : f(0,0) = 0 $$
             \end{array}
           \right.
           $$
-          \item Afin d'étudier l'influence des paramètres sur la résolution du problème nous avons réalisé un programme en python qui nous permet de récupérer l'évolution de la solution en fonction du nombre de générations. On fait ensuite varier soit la taille de la population, soit la probabilité de croisement, soit la probabilité de mutation. Nous obtenons alors un ensemble de courbes où chacune des courbes est associée à une valeur du paramètre sélectionné. Nous pouvons ainsi regarder l'évolution des courbes et déterminer l'influence du paramétrage sur la qualité de la solution et le temps pour l'obtenir.
+          \item Afin d'étudier l'influence des paramètres sur la résolution du problème nous avons réalisé un programme en python qui nous permet de récupérer l'évolution de la solution en fonction du nombre de générations. On fait ensuite varier soit la taille de la population, soit la probabilité de croisement, soit la probabilité de mutation. Nous obtenons alors un ensemble de courbes où chacune est associée à une valeur du paramètre sélectionné. Nous pouvons ainsi regarder l'évolution des courbes et déterminer l'influence du paramétrage sur la qualité de la solution.
 
           On définit l'efficacité de la résolution par rapport à la qualité de la solution obtenue et le nombre de générations nécessaires pour obtenir un résultat convenable. Afin d'obtenir ces résultats notre programme est séparé en plusieurs morceaux (Voir figure \ref{logi}).
 
           \begin{enumerate}
-          \item Dans un premier temps il nous faut la résolution du problème en elle-même. Nous faisons cela avec la bibliothèque Python Inspyred \cite{inspyred}. Lors d'une résolution du problème nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population, la probabilité de croisement et la probabilité de mutation.
+          \item Dans un premier temps il nous faut la résolution du problème en elle-même. Nous faisons cela avec la bibliothèque Python Inspyred \cite{inspyred} qui offre de nombreuses procédures/fonctions destinées à la programmation génétique. Lors d'une résolution du problème nous donnons à l'algorithme plusieurs paramètres : le nombre de générations, la taille de population, la probabilité de croisement et la probabilité de mutation.
 
-          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer. Notre programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de générations. On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
-          \emph{Remarque : Afin de passer à l'étape suivante cette partie est réalisé plusieurs fois dans les même conditions}
+          Nous voulons donc tracer des courbes avec différentes valeurs de paramètres pour les comparer, notre programme fait alors varier automatiquement le paramètre choisi et génère la courbe des solutions en fonction du nombre de générations. On stocke ensuite les courbes pour chaque valeur de variation dans un fichier.
+          \emph{Remarque : Afin de passer à l'étape suivante cette partie est réalisé plusieurs fois dans les même conditions.}
 
           \item Dans un second temps, afin d'obtenir des courbes exploitables on réalise la moyenne de tous les fichiers obtenus pour un même problème.
 
-          \item Et dans un troisième et dernier temps on procède au lissage des courbes moyennes précédemment générées en faisant une seconde moyenne directement sur les valeurs des courbes.
+          \item Et enfin, dans un troisième et dernier temps on procède au lissage des courbes moyennes précédemment générées en faisant une seconde moyenne directement sur les valeurs de chaque courbe.
         \end{enumerate}
         \end{itemize}
           \begin{figure}[!]
@@ -154,12 +155,12 @@
           \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
           \label{evo_pop_size_moy}
         \end{figure}
-        Le premier graphique (\ref{evo_pop_size_brut}) représente les données moyennes des fichiers (sans lissage), or bien que plus réaliste, cette représentation ne permet pas de tirer une conclusion quant à l'influence de ce paramètre. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy} qui est beaucoup plus lisible. \\
+        Le premier graphique (\ref{evo_pop_size_brut}) représente les données moyennes des fichiers (sans lissage), or bien que plus réaliste, cette représentation ne permet pas de tirer une conclusion quant à l'influence de ce paramètre sur l'algorithme. Afin d'éclaircir la figure on ramène un ensemble de points à une valeur moyenne de ces derniers (lissage), on obtient alors la figure \ref{evo_pop_size_moy} qui est beaucoup plus lisible. \\
 
-        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Lorsque l'on a une faible taille de population les solutions ont tendance à ne pas évoluer avec le nombre de générations. Cependant ce comportement s'améliore très rapidement avec l'augmentation de la taille de la population. Ceci explique le grand écart entre la population de 10 et la population de 110 individus.
+        Dans un premier temps on remarque que la première courbe qui a été générée est largement au-dessus des autres. Cette courbe correspond à une taille de population de 10 alors que la suivante correspond à une population de 110. Lorsque l'on a une faible taille de population les solutions ont tendance à ne pas évoluer avec le nombre de générations. Cependant ce comportement s'améliore très rapidement avec l'augmentation progressive de ce dernier paramètre. Ceci explique le grand écart entre la population de 10 et la population de 110 individus.
 
-        Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance dans les générations, plus les courbes s'écartent.
-        \\ L'influence de la taille de la population se déduit donc très facilement : plus on a une population élevée plus le programme va converger vers la solution du problème. On conclut donc que pour obtenir une solution de qualité il est nécessaire de prendre une grande population (au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
+        Si on met cette première courbe de côté, on remarque dans un second temps que lors des premières générations la convergence est semblable pour toutes les courbes, mais que plus on avance, plus les courbes s'écartent.
+        \\ L'influence de la taille de la population se déduit donc très facilement : plus on a une population élevée, plus le résultat du programme va converger vers la solution du problème. On conclut donc que pour obtenir une solution de qualité il est nécessaire de prendre une grande population (au moins 2000 individus) et d'effectuer un nombre suffisant de générations.
 
       \subsection{Probabilité de croisement}
 
@@ -177,7 +178,7 @@
         \label{evo_crossover_moy}
       \end{figure}
 
-      La première courbe correspond à une probabilité de croisement de 0. La solution n'évolue donc pas et est reste au niveau , peu importe le nombre de générations. Ensuite, plus la probabilité de croisement est haute plus la solution optimale est obtenue rapidement. Afin d'obtenir le meilleur résultat le plus rapidement possible, il faut alors choisir une probabilité de croisement proche de 1.
+      Pour ce qui est de la variation de la probabilité de croisement, la première courbe correspond à une probabilité de 0. La solution n'évolue donc pas et reste au même niveau, peu importe le nombre de générations. Ensuite, plus la probabilité de croisement est haute plus la solution optimale est obtenue rapidement. Afin d'obtenir le meilleur résultat le plus rapidement possible, il faut alors choisir une probabilité de croisement très proche de 1 (en sachant que dans tous les cas la variation de ce paramètre n'a pas d'influence sur le temps de résolution).
 
       \subsection{Probabilité de mutation}
 
