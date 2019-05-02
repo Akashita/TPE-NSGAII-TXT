@@ -202,7 +202,7 @@
 
   \chapter{Optimisation à objectifs multiples}
     \section{Algorithme - NSGA-II}
-    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
+    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto (Ou d'optimum de Pareto).}\\
 
     \begin{figure}[h]
       \begin{minipage}[c]{.46\linewidth}
@@ -269,7 +269,7 @@
       \begin{wrapfigure}{r}{5cm}
         \centering
         \includegraphics[width=6cm]{img/hypervolume.png}
-        \caption{Représentation de la méthode de calcul du l'hypervolume}
+        \caption{Représentation de la méthode de calcul de l'hypervolume}
         \label{hypervolume}
       \end{wrapfigure}
       Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono objectif. Lorsque l'on cherchait une et une seule valeur avec le premier algorithme, l'objectif est ici de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
@@ -280,7 +280,7 @@
 
       De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur la qualité de la solution. Les seules différences notables avec la première observation sont :
       \begin{itemize}
-        \item On change de type de problème (multiobjectifs) :
+        \item On change de type de problème (multiobjectifs) en utilisant le problème d'optimisation SCH \ref{wiki5}  :
         $$
         \forall x \in [-10,10],
         \left\{
@@ -295,7 +295,7 @@
 
 
       \subsection{Taille de la population}
-      La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieure à 500, le temps de résolution devient trop important pour exécuter notre programme de variation dans de bonnes conditions (nombre de générations élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
+      La taille de la population dans l'algorithme NSGA-II est un paramètre important car elle fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieure à 500, le temps de résolution devient trop important pour exécuter notre programme de variation dans de bonnes conditions (nombre de générations élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10, et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} après lissage. \\
 
       \begin{figure}[h]
         \centering
@@ -312,7 +312,7 @@
       \end{figure}
 
 
-      Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voire même ne l'influence pas du tout. En effet toutes les courbes convergent très rapidement et de la même façon vers la valeur de référence du problème, on ne distingue pas différence notable entre la courbe correspondant à 10 individus et celle correspondante à 150 individus.
+      Contrairement aux figures extraites du premier algorithme, on voit bien qu'ici la variation de ce paramètre influence bien moins la qualité de la solution, voire même ne l'influence pas du tout. En effet toutes les courbes convergent très rapidement et de la même façon vers la valeur de référence du problème, on ne distingue pas de différence notable entre la courbe correspondant à 10 individus et celle correspondant à 150 individus.
 
       On se doute que si nous avons la possibilité de changer la taille de la population c'est que ce paramètre influence forcément le résultat de l'algorithme. Selon nous le constat que nous faisons ci-dessus peut s'expliquer de deux façons :
       \begin{enumerate}
@@ -320,9 +320,16 @@
         \item Nous faisons varier la taille de la population de façon trop peu importante pour observer une différence entre chaque courbe.
       \end{enumerate}
 
-      Pour répondre à ces questions on tente une résolution du problème DTLZ7 nettement plus complexe :
-
-[DTLZ]
+      Pour répondre à ces questions on tente une résolution du problème DTLZ7 (tri-objectif) nettement plus complexe :
+      $$
+      \left\{
+        \begin{array}{ll}
+           f_{j}(x) = \frac{1}{[\frac{n}{M}]} \sum_{i=[(j-1)\frac{n}{M}]}^{[j\frac{n}{M}]}x_i , j=1,...,M  \\
+           g_{j}(x) = f_{M}(x) + 4f_{j}(x) - 1, \  pour\   j = 1,...,(M-1) \\
+           g_{M}(x) = 2f_{M}(x) + min_{i,j = 1 ; i \neq j}^{M-1}[f_i(x)+f_j(x)] - 1 \ge 0 \  0 \le x_i \le 1, i = 1,...,n
+        \end{array}
+      \right.
+      $$
       À cause d'un temps important de résolution, on exécute le programme sur seulement une dizaine de générations et une population allant de 10 à 400 avec un pas de 10.
       On obtient le résultat de la figure \ref{DTLZ7_pop}.
       \begin{figure}[h]
@@ -332,37 +339,38 @@
         \label{DTLZ7_pop}
       \end{figure}
 
-      On observe alors que contrairement au problème SCH, la population influence ici le résultat : plus elle est importante, plus la valeur de référence de l'hypervolume est atteinte rapidemmnt. En revanche, à cause du nombre de génération très limité (lié à la capacité de calcul de nos ordinateurs), on ne sait pas ce qu'il advient de ces courbes après 10 générations. Il est par exemple possible que comme avec le premier algorithme les courbes correspondantes à une population faible semblent tendre vers une valeur qui est supérieure à la valeur de référence.
-      Dans tous les cas, selon nos observations, afin d'obtenir un résultat convenable sur une période de temps relativement courte il est nécessaire de fournir à l'algorithme une population suffisament élevée d'au moins 100 à 200 individus.
+      On observe alors que contrairement au problème SCH, la population influence ici le résultat : plus elle est importante, plus la valeur de référence de l'hypervolume est atteinte rapidement. En revanche, à cause du nombre de génération très limité (lié à la capacité de calcul de nos ordinateurs), on ne sait pas ce qu'il advient de ces courbes après 10 générations. Il est par exemple possible que comme avec le premier algorithme les courbes correspondantes à une population faible semblent tendre vers une valeur qui est supérieure à la valeur de référence.
+      Dans tous les cas, selon nos observations, afin d'obtenir un résultat convenable sur une période de temps relativement courte, il est nécessaire de fournir à l'algorithme une population suffisament élevée d'au moins 100 à 200 individus.
 
       \subsection{Probabilité de croisement}
       \emph{Comme dans la partie précédente concernant la taille de la population il s'est avéré que le problème SCH était trop simple, on utilisera dans la suite de ce chapitre la fonction DTLZ7 (définie ci-dessus).}
       Comme nous l'avons expliqué dans le principe de l'algorithme NSGA-II, ce dernier utilise une méthode de croisement différente du premier algorithme : le croisement linéaire.
-      Or bien que cette méthode de croisement est répandue, lors de la variation de probabilité de croisement (même pour un problème difficile comme DTLZ7) on n'observe pas de différence majeur entre toutes les courbes. Tout comme la variation de la population avec la fonction SCH, on peut faire des suppositions sur les raisons de cette stabilité :
+      Or bien que cette méthode de croisement soit répandue, lors de la variation de probabilité de croisement (même pour un problème difficile comme DTLZ7) on n'observe pas de différence majeur entre toutes les courbes. Tout comme la variation de la population avec la fonction SCH, on peut faire des suppositions sur les raisons de cette stabilité :
       \begin{itemize}
-        \item La difficulté sur problème n'est peut être toujours pas assez élevée.
+        \item La difficulté du problème n'est peut être toujours pas assez élevée.
         \item Le pas de variation de la probabilité de croisement est peut être trop grand pour observer la répartition des courbes sur le graphique.
       \end{itemize}
 
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/DTLZ7_crossover.png}
-        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,400] avec un pas de 10 - Autre paramètres : $P_mutation = 0.5$,$P_{crossover} = 0.5$}
         \label{sch_crossover_moy}
       \end{figure}
 
-      Enfin, la variation de la probabilité de mutation nous donne la figure \ref{sch_mutation_moy}. On remarque que contrairement à toutes les figure précédentes, l'augmentation de la probabilté de mutation n'améliore pas la convergence vers la solution de référence, mais que au contraire elle la dégrade. Et d'ailleur, si on reprend la définition de la mutation dans les cadre des algorithmes génétiques cela paraît logique. La mutation n'est pas là pour améliorer la vitesse de convergence, mais plutôt pour éviter à l'algorithme de tomber dans un extremum local.
+      \subsection{Probabilité de mutation}
+
+      Enfin, la variation de la probabilité de mutation nous donne la figure \ref{sch_mutation_moy}. On remarque que contrairement à toutes les figures précédentes, l'augmentation de la probabilité de mutation n'améliore pas la convergence vers la solution de référence, mais qu'au contraire elle la dégrade. Et d'ailleurs, si on reprend la définition de la mutation dans le cadre des algorithmes génétiques cela paraît logique. La mutation n'est pas là pour améliorer la vitesse de convergence, mais plutôt pour éviter à l'algorithme de tomber dans un extremum local.
       Il faut donc adapter ce paramètre au problème que l'on essaye de résoudre :
       \begin{itemize}
-        \item Si le problème possède beaucoup d'extremums locaux : on définit un probabilité de mutation élevée
-        \item Sinon : on peut donner une valeur très faible à ce paramètre (voir même un valeur nulle)
+        \item Si le problème possède beaucoup d'extremums locaux : on définit une probabilité de mutation élevée
+        \item Sinon : on peut donner une valeur très faible à ce paramètre (voir même une valeur nulle)
       \end{itemize}
 
-      \subsection{Probabilité de mutation}
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/DTLZ7_mutation.png}
-        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,400] avec un pas de 10 - Autre paramètres : $P_mutation = 0.5$,$P_{crossover} = 0.5$}
         \label{sch_mutation_moy}
       \end{figure}
 
@@ -376,6 +384,7 @@
   Dans ce projet nous nous sommes catonnés à deux d'algorithmes qui représentent les algorithmes "types" dans le monde de l'optimisation génétique, mais il est à noter qu'il existe des centaines d'algorithmes génétiques, tous plus ou moins puissants et qui s'adaptent à certains problèmes en particulier. On peut par exemple citer tous les algorithmes génétiques qui ont été développés pour résoudre le \emph{problème du voyageur de commerce \cite{wiki7}}. De la même façon, cette fois-ci dans le monde industriel, de nombreux algorithmes sont très utilisés pour résoudre des problèmes d'optimisation au coeur des entreprises ou des bureaux d'études (MOGA, NSGA-III, PESA, NPGA...etc \cite{diapo}).
 
 
+  \vfill
    L'ensemble des programmes qui ont été utilisé pour réaliser ce projet sont soumis à la license \emph{GNU General Public License v3.0} et sont donc sont mis à disposition sur notre page GitHub : \\\\
    \url{https://github.com/Akashita/AG-USMB}
 
@@ -399,7 +408,7 @@
   \begin{itemize}
     \item Documentation bibliographique portant sur l’optimisation mathématique et sur la notion d’algorithmes génétiques
     \item Conception de plusieurs programmes adaptés à nos besoins utilisant la bibliothèque Python « Inspyred \cite{inspyred}»
-    \item Analyse de l’influence du paramétrage sur deux algorithmes différents : mono-objectif et multiobjectif (NSGA-II)
+    \item Analyse de l’influence du paramétrage sur deux algorithmes différents : mono objectif et multiobjectif (NSGA-II)
   \end{itemize}
   \section{Bilan (connaissances ou compétences acquises)}
   La réalisation de ce projet nous a permis de d’approfondir nos connaissances dans le domaine de l’informatique et de l’algorithmie. Ce fut également pour nous une bonne occasion de découvrir les notions d’algorithmes génétiques et d’optimisation mathématique. La découverte du monde de l'optimisation nous a d'ailleurs permis de nous projeter quelques années en avant dans ce qui pourrait être un domaine de poursuite d'étude.

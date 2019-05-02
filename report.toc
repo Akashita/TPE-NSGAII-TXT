@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {3.3.3}Probabilit\IeC {\'e} de croisement}{5}{subsection.3.3.3}% 
 \contentsline {subsection}{\numberline {3.3.4}Probabilit\IeC {\'e} de mutation}{6}{subsection.3.3.4}% 
 \contentsline {chapter}{\numberline {4}Optimisation \IeC {\`a} objectifs multiples}{8}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Algorithme - NSGAII}{8}{section.4.1}% 
+\contentsline {section}{\numberline {4.1}Algorithme - NSGA-II}{8}{section.4.1}% 
 \contentsline {subsection}{\numberline {4.1.1}Principe}{9}{subsection.4.1.1}% 
 \contentsline {section}{\numberline {4.2}M\IeC {\'e}thode de comparaison des r\IeC {\'e}sultats}{9}{section.4.2}% 
 \contentsline {section}{\numberline {4.3}Influence du param\IeC {\'e}trage}{10}{section.4.3}% 
@@ -21,11 +21,11 @@
 \contentsline {subsection}{\numberline {4.3.2}Taille de la population}{10}{subsection.4.3.2}% 
 \contentsline {subsection}{\numberline {4.3.3}Probabilit\IeC {\'e} de croisement}{12}{subsection.4.3.3}% 
 \contentsline {subsection}{\numberline {4.3.4}Probabilit\IeC {\'e} de mutation}{13}{subsection.4.3.4}% 
-\contentsline {chapter}{\numberline {5}Conclusion}{14}{chapter.5}% 
-\contentsline {chapter}{\numberline {A}Fiche synoptique}{15}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{15}{section.A.1}% 
-\contentsline {section}{\numberline {A.2}Pr\IeC {\'e}sentation du sujet}{15}{section.A.2}% 
-\contentsline {section}{\numberline {A.3}D\IeC {\'e}marches et grandes lignes du travail r\IeC {\'e}alis\IeC {\'e}}{15}{section.A.3}% 
-\contentsline {section}{\numberline {A.4}Bilan (connaissances ou comp\IeC {\'e}tences acquises)}{15}{section.A.4}% 
-\contentsline {section}{\numberline {A.5}Contacts et/ou lien avec le secteur industriel}{16}{section.A.5}% 
-\contentsline {section}{\numberline {A.6}Bibliographies importantes}{16}{section.A.6}% 
+\contentsline {chapter}{\numberline {5}Conclusion}{15}{chapter.5}% 
+\contentsline {chapter}{\numberline {A}Fiche synoptique}{16}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s}{16}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}Pr\IeC {\'e}sentation du sujet}{16}{section.A.2}% 
+\contentsline {section}{\numberline {A.3}D\IeC {\'e}marches et grandes lignes du travail r\IeC {\'e}alis\IeC {\'e}}{16}{section.A.3}% 
+\contentsline {section}{\numberline {A.4}Bilan (connaissances ou comp\IeC {\'e}tences acquises)}{16}{section.A.4}% 
+\contentsline {section}{\numberline {A.5}Contacts et/ou lien avec le secteur industriel}{17}{section.A.5}% 
+\contentsline {section}{\numberline {A.6}Bibliographies importantes}{17}{section.A.6}% 
