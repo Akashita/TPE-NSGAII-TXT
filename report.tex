@@ -45,13 +45,13 @@
     Les algorithmes génétiques sont une application directe du darwinisme à l'informatique.\\
     De nos jours, ces algorithmes permettent de résoudre des problèmes d'optimisation, c'est-à-dire de maximiser ou de minimiser numériquement une ou plusieurs fonctions.
     La branche des mathématiques qu'est l'optimisation est un élément central dans le monde de l'ingénierie ou on cherche dans de très nombreux cas à minimiser plusieurs problèmes à la fois et à obtenir une solution de qualité dans un laps de temps court.\\
-    Ce rapport présente deux types d'algorithme génétique différents, le premier est adapté à une optimisation mono-objectif (un seul problème), alors que l'autre l'est pour des problèmes multiobjectifs. Pour chacun des deux algorithmes nous détaillerons à la fois le principe de résolution, mais aussi l'influence du paramétrage.
+    Ce rapport présente deux types d'algorithme génétique différents, le premier est adapté à une optimisation mono objectif (un seul problème), alors que l'autre l'est pour des problèmes multiobjectifs. Pour chacun des deux algorithmes nous détaillerons à la fois le principe de résolution, mais aussi l'influence du paramétrage.
 
   \tableofcontents
   \chapter{Optimisation à objectif unique}
     \pagenumbering{arabic}
     \begin{description}
-      \item[Définition :] on dit d'un algorithme qu'il est à objectif unique (mono-objectif) s'il ne cherche à optimiser qu'une seule fonction. Dans le cas d'une optimisation qui comprend plusieurs fonctions on parle alors d'algorithmes multiobjectifs.
+      \item[Définition :] on dit d'un algorithme qu'il est à objectif unique (mono objectif) s'il ne cherche à optimiser qu'une seule fonction. Dans le cas d'une optimisation qui comprend plusieurs fonctions on parle alors d'algorithmes multiobjectifs.
     \end{description}
     \section{Algorithme}
       \subsection{Principe}
@@ -62,11 +62,11 @@
         \label{logi}
         \end{wrapfigure}
         Hormis quelques variations dans leur conception, les algorithmes génétiques ont pratiquement tous le même principe de fonctionnement.
-        Le logigramme ci-joint \ref{logi} illustre le fonctionnement de base d'un algorithme mono-objectif.
+        Le logigramme ci-joint \ref{logi} illustre le fonctionnement de base d'un algorithme mono objectif.
         On commence par générer de façon aléatoire une population de base qui servira d'initialisation de notre algorithme.
         Chaque individu de cette population est alors évalué, on lui attribue une valeur qui va déterminer sa position par rapport à la solution optimale recherchée (ici le minimum de la fonction).
         Une sélection est ensuite effectuée en gardant les meilleurs résultats, mais aussi en gardant un certain pourcentage de valeurs considérées comme de moyenne/faible qualité. Cette dernière opération permet entre autres à l'algorithme de ne pas tomber dans un extremum local.
-        À partir de cette sélection, l'algorithme va procéder à deux étapes :
+        À partir de cette sélection, l'algorithme va procéder en deux étapes :
 
         Le croisement (Crossover) :
           il consiste à partager (croiser) les particularités de deux individus parents pour engendrer une nouvelle population d'individus conservant ces mêmes particularités. À noter qu'il existe plusieurs méthodes de croisement (linéaire, à n points, ... etc) qui ont chacune leurs particularités. Dans notre cas c'est le croisement à 3 points de rotation qui est utilisé, son fonctionnement est expliqué par la figure \ref{sch_crossover}.
@@ -83,7 +83,7 @@
           \emph{Remarque : cette opération illustre le principe de variation de la théorie de Darwin \cite{darwin}.}
 
     \section{Optimisation unidimensionnelle / multidimensionnelle}
-      Bien que l'optimisation mono-objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variables, on parle alors d'optimisation multidimensionnelle $(\mathbb{R}^n \rightarrow \mathbb{R})$. Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
+      Bien que l'optimisation mono objectif signifie l'optimisation d'un seul problème, ce problème peut tout de même comporter plusieurs variables, on parle alors d'optimisation multidimensionnelle $(\mathbb{R}^n \rightarrow \mathbb{R})$. Il est possible de représenter graphiquement de tels problèmes jusqu'à une dimension égale à 2 (Voir figure \ref{ex_r2}).
 
       \begin{figure}[h]
         \begin{minipage}[c]{.46\linewidth}
@@ -202,7 +202,7 @@
 
   \chapter{Optimisation à objectifs multiples}
     \section{Algorithme - NSGA-II}
-    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono-objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
+    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto. (Ou d'optimum de Pareto)}\\
 
     \begin{figure}[h]
       \begin{minipage}[c]{.46\linewidth}
@@ -272,7 +272,7 @@
         \caption{Représentation de la méthode de calcul du l'hypervolume}
         \label{hypervolume}
       \end{wrapfigure}
-      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono-objectif. Lorsque l'on cherchait une et une seule valeur avec le premier algorithme, l'objectif est ici de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
+      Comme nous l'avons vu en abordant la notion de front de Pareto, le type solution recherché dans le cadre d'une optimisation multiobjectif n'est pas le même que dans un problème mono objectif. Lorsque l'on cherchait une et une seule valeur avec le premier algorithme, l'objectif est ici de minimiser plusieurs fonctions à la fois. Notre but final étant d'étudier l'influence du paramétrage il est essentiel de pouvoir caractériser l'évolution de chaque algorithme. \\
       Dans le cas présent, pour un problème multiobjectif il est possible d'étudier l'évolution du front de Pareto géométriquement en calculant l'aire, le volume ou plus généralement l'hypervolume de ce dernier.
       Prenons un exemple simple dans un problème ou l'on cherche à minimiser deux fonctions (Figure \ref{hypervolume}). La courbe noire représente le front de Pareto de référence et les points rouges un front trouvé à l'aide de l'algorithme NSGA-II (peu d'individus et peu de générations). On pose un point sur le plan et on calcule les aires des fronts noir et rouge en tenant compte du point A. On obtient alors deux valeurs réelles comparables qui permettent d'étudier la convergence du front de Pareto au cours des générations (plus les valeurs sont semblables, plus la qualité du Pareto est bonne).
     \section{Influence du paramétrage}
@@ -351,7 +351,7 @@
         \label{sch_crossover_moy}
       \end{figure}
 
-      Enfin, la variation de la probabilité de muation nous donne la figure \ref{sch_mutation_moy}. On remarque que contrairement à toutes les figure précédentes, l'augmentation de la probabilté de mutation n'ameillore pas la convergence vers la solution de référence, mais que au contraire elle la dégrade. Et d'ailleur, si on reprend la définition de la mutation dans les cadre des algorithmes génétiques cela parrait logique. La mutation n'est pas là pour ameillorer la vitesse de convergence, mais plutot pour éviter à l'algorithme de tombrer dans un extremum local.
+      Enfin, la variation de la probabilité de mutation nous donne la figure \ref{sch_mutation_moy}. On remarque que contrairement à toutes les figure précédentes, l'augmentation de la probabilté de mutation n'améliore pas la convergence vers la solution de référence, mais que au contraire elle la dégrade. Et d'ailleur, si on reprend la définition de la mutation dans les cadre des algorithmes génétiques cela paraît logique. La mutation n'est pas là pour améliorer la vitesse de convergence, mais plutôt pour éviter à l'algorithme de tomber dans un extremum local.
       Il faut donc adapter ce paramètre au problème que l'on essaye de résoudre :
       \begin{itemize}
         \item Si le problème possède beaucoup d'extremums locaux : on définit un probabilité de mutation élevée
@@ -393,18 +393,18 @@
     \item[Filière] PEIP 111
   \end{description}
   \section{Présentation du sujet}
-   L’optimisation par algorithmes génétiques est un domaine à la croisée de l’informatique et des mathématiques qui occupe une place importante dans le monde de l’ingénierie. Pour de nombreux algorithmes génétiques servant à l’optimisation, la définition au préalable de certains paramètres est obligatoire et nécessite de savoir comment chaque paramètre influence le résultat de la résolution et le temps nécessaire pour l’obtenir. Le but du sujet est donc d’observer l’influence de ces paramètres sur l’optimisation des problèmes.
+   L’optimisation par algorithmes génétiques est un domaine à la croisée de l’informatique et des mathématiques qui occupe une place importante dans le monde de l’ingénierie. Pour de nombreux algorithmes génétiques servant à l’optimisation, la définition au préalable de certains paramètres est obligatoire et nécessite de savoir comment chaque paramètre influence le résultat de la résolution (et le temps nécessaire pour l’obtenir). Le but du sujet est donc d’observer l’influence de ces paramètres sur l’optimisation des problèmes.
   \section{Démarches et grandes lignes du travail réalisé}
   Dans le cadre de ce TPE les points suivants ont été réalisés :
   \begin{itemize}
     \item Documentation bibliographique portant sur l’optimisation mathématique et sur la notion d’algorithmes génétiques
-    \item Conception d’un programme adapté à nos besoins utilisant la bibliothèque python « inspyred »
-    \item Analyse de l’influence du paramétrage sur deux algorithmes différents : mono-objectif et multi-objectif (NSGA-II)
+    \item Conception de plusieurs programmes adaptés à nos besoins utilisant la bibliothèque Python « Inspyred \cite{inspyred}»
+    \item Analyse de l’influence du paramétrage sur deux algorithmes différents : mono-objectif et multiobjectif (NSGA-II)
   \end{itemize}
   \section{Bilan (connaissances ou compétences acquises)}
-  La réalisation de ce projet nous a permit de d’approfondir nos connaissances dans le domaine de l’informatique et de l’algorithmie. Ce fut également pour nous une bonne occasion de découvrir les notions d’algorithmes génétiques et d’optimisation mathématique.
+  La réalisation de ce projet nous a permis de d’approfondir nos connaissances dans le domaine de l’informatique et de l’algorithmie. Ce fut également pour nous une bonne occasion de découvrir les notions d’algorithmes génétiques et d’optimisation mathématique. La découverte du monde de l'optimisation nous a d'ailleurs permis de nous projeter quelques années en avant dans ce qui pourrait être un domaine de poursuite d'étude.
   \section{Contacts et/ou lien avec le secteur industriel}
-  L’optimisation occupe une place très importante dans le monde de l’ingénierie et plus globalement dans le secteur industriel. Que ce soit afin d'optimiser le trajet d'un véhicule, de minimiser des coûts de production, d'améliorer les performances d'un circuit électronique ou encore d'ordonnancer les processus dans un système informatique, les algorithmes génétiques qui gèrent le multi-objectif sont un moyen fiable d’obtenir un résultat rapide.
+  L’optimisation occupe une place très importante dans le monde de l’ingénierie et plus globalement dans le secteur industriel. Que ce soit afin d'optimiser le trajet d'un véhicule, de minimiser des coûts de production, d'améliorer les performances d'un circuit électronique ou encore d'ordonnancer les processus dans un système informatique, les algorithmes génétiques qui gèrent le multiobjectif sont un moyen fiable d’obtenir un résultat rapide.
   \section{Bibliographies importantes}
   Toute la bibliographie est disponible sur la page suivante.
   Les ouvrages qui se sont avérés êtres les plus importants pour ce projet : \cite{nsga2} \cite{culiolo} \cite{inspyred}.
