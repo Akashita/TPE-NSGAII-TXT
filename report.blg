@@ -1,13 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
 The style file: plain.bst
 Database file #1: biblio.bib
-Repeated entry---line 20 of file biblio.bib
- : @book{darwin
- :             ,
-I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in wiki6
 Warning--to sort, need author or key in wiki5
 Warning--to sort, need author or key in inspyred
+Warning--to sort, need author or key in wiki7
 Warning--to sort, need author or key in wiki1
 Warning--to sort, need author or key in wiki2
 Warning--to sort, need author or key in wiki3
@@ -15,4 +12,5 @@ Warning--to sort, need author or key in wiki4
 Warning--empty publisher in culiolo
 Warning--empty publisher in darwin
 Warning--empty publisher in prog_math
-(There was 1 error message)
+Warning--empty publisher in tarek
+(There were 12 warnings)

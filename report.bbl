@@ -24,13 +24,18 @@ Mutation.
 Optimisation (mathématiques).
 \newblock fr.wikipedia.org/wiki/Optimisation\_(mathématique).
 
+\bibitem{wiki7}
+Problème du voyageur de commerce.
+\newblock fr.wikipedia.org/wiki/Problème\_du\_voyageur\_de\_commerce.
+
 \bibitem{wiki5}
 Test functions for optimization.
 \newblock en.wikipedia.org/wiki/Test\_functions\_for\_optimization.
 
 \bibitem{diapo}
 Alain Berro.
-\newblock Algorithme évolutionnaire pour l'optimisation multiobjectif.
+\newblock Algorithme évolutionnaire pour l'optimisation multiobjectif (page
+  31).
 \newblock www.laas.fr/files/MOGISA/sem\_Alain-Berro.pdf.
 
 \bibitem{culiolo}
@@ -58,5 +63,10 @@ Kamal~Mohammedi Idir~Belaidi, Brahim~Merdjadoui.
 Michel Minoux.
 \newblock {\em Programmation mathématique}.
 \newblock 2007.
+
+\bibitem{tarek}
+Tarek Ziadé.
+\newblock {\em Programmation Python}.
+\newblock 1862.
 
 \end{thebibliography}
