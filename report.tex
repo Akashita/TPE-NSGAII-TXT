@@ -337,6 +337,12 @@
       \subsection{Probabilité de croisement}
       \emph{Comme dans la partie précédente concernant la taille de la population il s'est avéré que le problème SCH était trop simple, on utilisera dans la suite de ce chapitre la fonction DTLZ7 (définie ci-dessus).}
       Comme nous l'avons expliqué dans le principe de l'algorithme NSGA-II, ce dernier utilise une méthode de croisement différente du premier algorithme : le croisement linéaire.
+      Or bien que cette méthode de croisement est répandue, lors de la variation de probabilité de croisement (même pour un problème difficile comme DTLZ7) on n'observe pas de différence majeur entre toutes les courbes. Tout comme la variation de la population avec la fonction SCH, on peut faire des suppositions sur les raisons de cette stabilité :
+      \begin{itemize}
+        \item La difficulté sur problème n'est peut être toujours pas assez élevée.
+        \item Le pas de variation de la probabilité de croisement est peut être trop grand pour observer la répartition des courbes sur le graphique.
+      \end{itemize}
+
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/DTLZ7_crossover.png}
@@ -344,6 +350,12 @@
         \label{sch_crossover_moy}
       \end{figure}
 
+      Enfin, la variation de la probabilité de muation nous donne la figure \ref{sch_mutation_moy}. On remarque que contrairement à toutes les figure précédentes, l'augmentation de la probabilté de mutation n'ameillore pas la convergence vers la solution de référence, mais que au contraire elle la dégrade. Et d'ailleur, si on reprend la définition de la mutation dans les cadre des algorithmes génétiques cela parrait logique. La mutation n'est pas là pour ameillorer la vitesse de convergence, mais plutot pour éviter à l'algorithme de tombrer dans un extremum local.
+      Il faut donc adapter ce paramètre au problème que l'on essaye de résoudre :
+      \begin{itemize}
+        \item Si le problème possède beaucoup d'extremums locaux : on définit un probabilité de mutation élevée
+        \item Sinon : on peut donner une valeur très faible à ce paramètre (voir même un valeur nulle)
+      \end{itemize}
 
       \subsection{Probabilité de mutation}
       \begin{figure}[h]
