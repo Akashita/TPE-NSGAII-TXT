@@ -195,7 +195,7 @@
         \label{evo_mutation_moy}
       \end{figure}
 
-      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. la mutation sert principalement à éviter de se coincer dans un minimum local en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
+      Nous ne voyons ici aucune différence entre les courbes. La probabilité de mutation ne semble pas influer l'efficacité de la résolution. La mutation sert principalement à éviter de se coincer dans un minimum local en rajoutant de l'aléatoire dans les individus. Le fait qu'ici ce paramètre n'ait aucune influence peut s'expliquer par le fait que le problème est trop simple, la variation due à la probabilité de mutation est donc invisible pour nous.
 
 
 
@@ -243,7 +243,7 @@
 
       \begin{description}
         \item [Approche élitiste] L'algorithme sauvegarde les meilleures solutions des générations précédentes (préservation de la diversité)
-        \item [Non domination] L'algorithme tri les individus selon un ordre croissant de non-domination (Voir figure \ref{non_domine})
+        \item [Non domination] L'algorithme trie les individus selon un ordre croissant de non-domination (Voir figure \ref{non_domine})
         \item [Croisement linéaire] Contrairement au croisement à n points du premier algorithme, les portions caractéristiques de chaque individu sont échangées aléatoirement et non par segment.
         \item [Mutation personnalisée] L'algorithme propose de choisir la méthode de mutation à utiliser \cite{wiki6}. Dans notre cas, la mutation gaussienne est utilisée du fait de sa popularité auprès des utilisateurs de la bibliothèque Inspyred \cite{inspyred}.
       \end{description}
@@ -294,19 +294,19 @@
 
 
       \subsection{Taille de la population}
-      La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieurs à 500, le temps de résolution devient trop important pour exécuter notre programme de variation dans de bonnes conditions (Nombre de générations élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
+      La taille de la population dans l'algorithme NSGA-II est un paramètre important car il fait varier de façon significative le temps de résolution du problème. Ainsi, pour une population d'individus supérieure à 500, le temps de résolution devient trop important pour exécuter notre programme de variation dans de bonnes conditions (nombre de générations élevé). Dans cette partie on se contente donc d'une population allant de 10 individus à 150 avec un pas de 10 et de 50 générations maximum. On obtient alors la figure \ref{sch_pop_size_moy} qui donne la figure \ref{sch_pop_size_liss} (Lissage).
 
       \begin{figure}[h]
         \centering
         \includegraphics[width=18cm]{img/pop_size_sch_moy.png}
-        \caption{Représentation de la solution au cours des générations - Variation de la taille de la population sur [10,2000] avec un pas de 10 - Autre paramètres : $population = 1000$,$P_{crossover} = 0.5$}
+        \caption{Représentation de l'hypervolume au cours des générations - Variation de la taille de la population sur [10,150] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
         \label{sch_pop_size_moy}
       \end{figure}
 
       \begin{figure}[!]
         \centering
         \includegraphics[width=18cm]{img/pop_size_sch_liss.png}
-        \caption{Représentation "lissée" de la figure \ref{evo_pop_size_brut}}
+        \caption{Représentation "lissée" de la figure \ref{sch_pop_size_moy}}
         \label{sch_pop_size_liss}
       \end{figure}
 
@@ -323,9 +323,9 @@
       $$
       \left\{
         \begin{array}{ll}
-           f_j(x) = 1/[n/M] \sum{i=[(j-1)n/M]}^[jn/M] x_i , j=1,...,M  \\
-           g_j(x) = f_M(x) + 4f_j(x) - 1 , pour j = 1,...,(M-1) \\
-           g_M(x) = 2f_M(x) + min_{i,j = 1 ; i \neq j}^{M-1}[f_i(x)+f_j(x)] - 1 \ge 0 , 0 \le x_i \le 1, i = 1,...,n
+           f_{j}(x) = 1/{[n/M]} \sum{i=[(j-1)n/M]}^{[jn/M]}x_i , j=1,...,M  \\
+           g_{j}(x) = f_{M}(x) + 4f_{j}(x) - 1 , pour j = 1,...,(M-1) \\
+           g_{M}(x) = 2f_{M}(x) + min_{i,j = 1 ; i \neq j}^{M-1}[f_i(x)+f_j(x)] - 1 \ge 0 , 0 \le x_i \le 1, i = 1,...,n
         \end{array}
       \right.
       $$
@@ -334,11 +334,16 @@
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/DTLZ7_pop.png}
-        \caption{}
+        \caption{Représentation de l'hypervolume au cours des générations - Variation de la taille de la population sur [10,400] avec un pas de 10 - Autre paramètres : $P_{mutation} = 0.5$,$P_{crossover} = 0.5$}
         \label{DTLZ7_pop}
       \end{figure}
 
+      On observe alors que contrairement au problème SCH, la population influence ici le résultat : plus elle est importante, plus la valeur de référence de l'hypervolume est atteinte rapidemmnt. En revanche, à cause du nombre de génération très limité (lié à la capacité de calcul de nos ordinateurs), on ne sait pas ce qu'il advient de ces courbes après 10 générations. Il est par exemple possible que comme avec le premier algorithme les courbes correspondantes à une population faible semblent tendre vers une valeur qui est supérieure à la valeur de référence.
+      Dans tous les cas, selon nos observations, afin d'obtenir un résultat convenable sur une période de temps relativement courte il est nécessaire de fournir à l'algorithme une population suffisament élevée d'au moins 100 à 200 individus.
+
       \subsection{Probabilité de croisement}
+      \emph{Comme dans la partie précédente concernant la taille de la population il s'est avéré que le problème SCH était trop simple, on utilisera dans la suite de ce chapitre la fonction DTLZ7 (définie ci-dessus).}
+      On a observé avec le premier algorithme que la
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/DTLZ7_crossover.png}
