@@ -111,8 +111,8 @@
           $$
           \left\{
             \begin{array}{ll}
-               \forall x,y \in [-5,5], f(x,y) = -20 * e^{-0.2\sqrt{0.5(x^2+y^2)}} $$ \\
-               Solution de référence : f(0,0) = 0 $$
+               \forall x,y \in [-5,5], f(x,y) = -20 * e^{-0.2\sqrt{0.5(x^2+y^2)}} \\
+               Solution : f(0,0) = 0
             \end{array}
           \right.
           $$
@@ -202,7 +202,7 @@
 
   \chapter{Optimisation à objectifs multiples}
     \section{Algorithme - NSGA-II}
-    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto (Ou d'optimum de Pareto).}\\
+    L'algorithme d'optimisation NSGA-II (Non dominated sorting genetic algorithm 2) est un algorithme connu et utilisé à l'échelle mondiale pour sa fiabilité et ses performances. Ce type d'algorithmes diffère du premier par le nombre d'objectifs qu'il peut prendre en paramètre. Quand bien le premier algorithme ne pouvait chercher une solution que sur un problème mono objectif, l'algorithme NSGA-II peut prendre plusieurs objectifs en paramètre. Cette différence entraine le changement de la nature des solutions, on parle alors de \emph{front de Pareto (ou d'optimum de Pareto).}\\
 
     \begin{figure}[h]
       \begin{minipage}[c]{.46\linewidth}
@@ -280,7 +280,7 @@
 
       De la même façon qu'avec le premier algorithme on cherche à observer l'influence du paramétrage sur la qualité de la solution. Les seules différences notables avec la première observation sont :
       \begin{itemize}
-        \item On change de type de problème (multiobjectifs) en utilisant le problème d'optimisation SCH \ref{wiki5}  :
+        \item On change de type de problème (multiobjectifs) en utilisant le problème d'optimisation SCH \cite{wiki5}  :
         $$
         \forall x \in [-10,10],
         \left\{
@@ -381,7 +381,7 @@
   Nous avons pu voir au travers de deux algorithmes génétiques de natures différentes que leur paramétrage influence réellement les caractéristiques de leurs solutions. Ainsi, avec l'étude sur l'influence des paramètres que nous avons menée il est possible pour un utilisateur de choisir le bon paramétrage en fonction du résultat qu'il veut obtenir.
   Tout au long de ce projet, un élément est resté central et mériterait sans doute qu'on s'y intéresse de façon plus poussée : le temps. Car quand bien il est possible d'obtenir une solution de qualité sur une période de résolution longue, il est aussi possible d'obtenir un résultat sensiblement identique sur un laps de temps beaucoup plus court. Et c'est ici que le paramétrage prend toute son importance : un mauvais paramétrage donnera une solution au bout d'un moment, mais un bon la donnera beaucoup plus rapidement et avec une qualité bien supérieure.
 
-  Dans ce projet nous nous sommes catonnés à deux d'algorithmes qui représentent les algorithmes "types" dans le monde de l'optimisation génétique, mais il est à noter qu'il existe des centaines d'algorithmes génétiques, tous plus ou moins puissants et qui s'adaptent à certains problèmes en particulier. On peut par exemple citer tous les algorithmes génétiques qui ont été développés pour résoudre le \emph{problème du voyageur de commerce \cite{wiki7}}. De la même façon, cette fois-ci dans le monde industriel, de nombreux algorithmes sont très utilisés pour résoudre des problèmes d'optimisation au coeur des entreprises ou des bureaux d'études (MOGA, NSGA-III, PESA, NPGA...etc \cite{diapo}) La plupart du temps le choix de l'algorithme se base sur la capacité de ce dernier à gérer un nombre plus ou moins élevé d'objectifs.
+  Dans ce projet nous nous sommes cantonnés à deux algorithmes qui représentent les algorithmes "types" dans le monde de l'optimisation génétique, mais il est à noter qu'il existe des centaines d'algorithmes génétiques, tous plus ou moins puissants et qui s'adaptent à certains problèmes en particulier. On peut par exemple citer tous les algorithmes génétiques qui ont été développés pour résoudre le \emph{problème du voyageur de commerce \cite{wiki7}}. De la même façon, cette fois-ci dans le monde industriel, de nombreux algorithmes sont très utilisés pour résoudre des problèmes d'optimisation au coeur des entreprises ou des bureaux d'études (MOGA, NSGA-III, PESA, NPGA...etc \cite{diapo}) La plupart du temps le choix de l'algorithme se base sur la capacité de ce dernier à gérer un nombre plus ou moins élevé d'objectifs.
 
 
   \vfill
