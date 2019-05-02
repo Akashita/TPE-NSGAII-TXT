@@ -320,15 +320,8 @@
       \end{enumerate}
 
       Pour répondre à ces questions on tente une résolution du problème DTLZ7 nettement plus complexe :
-      $$
-      \left\{
-        \begin{array}{ll}
-           f_{j}(x) = 1/{[n/M]} \sum{i=[(j-1)n/M]}^{[jn/M]}x_i , j=1,...,M  \\
-           g_{j}(x) = f_{M}(x) + 4f_{j}(x) - 1 , pour j = 1,...,(M-1) \\
-           g_{M}(x) = 2f_{M}(x) + min_{i,j = 1 ; i \neq j}^{M-1}[f_i(x)+f_j(x)] - 1 \ge 0 , 0 \le x_i \le 1, i = 1,...,n
-        \end{array}
-      \right.
-      $$
+
+[DTLZ]
       À cause d'un temps important de résolution, on exécute le programme sur seulement une dizaine de générations et une population allant de 10 à 400 avec un pas de 10.
       On obtient le résultat de la figure \ref{DTLZ7_pop}.
       \begin{figure}[h]
@@ -343,7 +336,7 @@
 
       \subsection{Probabilité de croisement}
       \emph{Comme dans la partie précédente concernant la taille de la population il s'est avéré que le problème SCH était trop simple, on utilisera dans la suite de ce chapitre la fonction DTLZ7 (définie ci-dessus).}
-      On a observé avec le premier algorithme que la
+      Comme nous l'avons expliqué dans le principe de l'algorithme NSGA-II, ce dernier utilise une méthode de croisement différente du premier algorithme : le croisement linéaire.
       \begin{figure}[h]
         \centering
         \includegraphics[width=15cm]{img/DTLZ7_crossover.png}
@@ -363,8 +356,12 @@
 
 
   \chapter{Conclusion}
-   + Il existe d'autre algo utilisés : http://www.laas.fr/files/MOGISA/sem_Alain-Berro.pdf p.31
-   + Il faut relier avec le metier ingé
+
+  Nous avons pu voir au travers de deux algorithmes génétiques de natures différentes que leur paramétrage influence réellement les caractéristiques de leurs solutions. Ainsi, avec l'étude sur l'influence des paramètres que nous avons menée il est possible pour un utilisateur de choisir le bon paramétrage en fonction du résultat qu'il veut obtenir.
+  Tout au long de ce projet, un élément est resté central et mériterait sans doute qu'on s'y intéresse de façon plus poussée : le temps. Car quand bien il est possible d'obtenir une solution de qualité sur une période de résolution longue, il est aussi possible d'obtenir un résultat sensiblement identique sur un laps de temps beaucoup plus court. Et c'est ici que le paramétrage prend toute son importance : un mauvais paramétrage donnera une solution au bout d'un moment, mais un bon la donnera beaucoup plus rapidement et avec une qualité bien supérieure.
+
+  Dans ce projet nous nous sommes catonnés à deux d'algorithmes qui représentent les algorithmes "types" dans le monde de l'optimisation génétique, mais il est à noter qu'il existe des centaines d'algorithmes génétiques, tous plus ou moins puissants et qui s'adaptent à certains problèmes en particulier. On peut par exemple citer tous les algorithmes génétiques qui ont été développés pour résoudre le \emph{problème du voyageur de commerce \cite{wiki7}}. De la même façon, cette fois-ci dans le monde industriel, de nombreux algorithmes sont très utilisés pour résoudre des problèmes d'optimisation au coeur des entreprises ou des bureaux d'études (MOGA, NSGA-III, PESA, NPGA...etc \cite{diapo}).
+
 
    L'ensemble des programmes qui ont été utilisé pour réaliser ce projet sont soumis à la license \emph{GNU General Public License v3.0} et sont donc sont mis à disposition sur notre page GitHub : \\\\
    \url{https://github.com/Akashita/AG-USMB}
