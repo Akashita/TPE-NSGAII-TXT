@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.9)  2 MAY 2019 14:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.2.9)  2 MAY 2019 14:39
 entering extended mode
 **./report.tex
 (report.tex
@@ -464,16 +464,16 @@ Package pdftex.def Info: img/ackley.png  used on input line 97.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 133.
 
-<img/logigramme.png, id=225, 784.73175pt x 516.2487pt>
+<img/logigramme.png, id=225, 240.9pt x 158.5122pt>
 File: img/logigramme.png Graphic file (type png)
 <use img/logigramme.png>
 Package pdftex.def Info: img/logigramme.png  used on input line 135.
-(pdftex.def)             Requested size: 284.52756pt x 187.18065pt.
-<img/evo_pop_size_brut.png, id=228, 1387.584pt x 704.6325pt>
+(pdftex.def)             Requested size: 284.52756pt x 187.23627pt.
+<img/evo_pop_size_brut.png, id=228, 216.81pt x 110.3322pt>
 File: img/evo_pop_size_brut.png Graphic file (type png)
 <use img/evo_pop_size_brut.png>
 Package pdftex.def Info: img/evo_pop_size_brut.png  used on input line 146.
-(pdftex.def)             Requested size: 512.1496pt x 260.07559pt.
+(pdftex.def)             Requested size: 512.1496pt x 260.69818pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -481,11 +481,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 151.
 
-<img/evo_pop_size_moy.png, id=229, 1387.584pt x 704.6325pt>
+<img/evo_pop_size_moy.png, id=229, 216.81pt x 110.3322pt>
 File: img/evo_pop_size_moy.png Graphic file (type png)
 <use img/evo_pop_size_moy.png>
 Package pdftex.def Info: img/evo_pop_size_moy.png  used on input line 153.
-(pdftex.def)             Requested size: 512.1496pt x 260.07559pt.
+(pdftex.def)             Requested size: 512.1496pt x 260.69818pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
@@ -493,36 +493,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
 [3 <./img/logigramme.png>] [4 <./img/evo_pop_size_brut.png> <./img/evo_pop_size
 _moy.png>]
-<img/evo_crossover_brut.png, id=252, 1387.584pt x 704.6325pt>
+<img/evo_crossover_brut.png, id=252, 1389.8077pt x 706.02231pt>
 File: img/evo_crossover_brut.png Graphic file (type png)
 <use img/evo_crossover_brut.png>
 Package pdftex.def Info: img/evo_crossover_brut.png  used on input line 168.
-(pdftex.def)             Requested size: 426.79134pt x 216.72429pt.
+(pdftex.def)             Requested size: 426.79134pt x 216.807pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 173.
 
-<img/evo_crossover_moy.png, id=253, 1387.584pt x 704.6325pt>
+<img/evo_crossover_moy.png, id=253, 192.72pt x 98.0463pt>
 File: img/evo_crossover_moy.png Graphic file (type png)
 <use img/evo_crossover_moy.png>
 Package pdftex.def Info: img/evo_crossover_moy.png  used on input line 175.
-(pdftex.def)             Requested size: 426.79134pt x 216.72429pt.
-<img/evo_mutation_brut.png, id=255, 1387.584pt x 704.6325pt>
+(pdftex.def)             Requested size: 426.79134pt x 217.12971pt.
+<img/evo_mutation_brut.png, id=255, 192.72pt x 98.0463pt>
 File: img/evo_mutation_brut.png Graphic file (type png)
 <use img/evo_mutation_brut.png>
 Package pdftex.def Info: img/evo_mutation_brut.png  used on input line 186.
-(pdftex.def)             Requested size: 483.69684pt x 245.62515pt.
+(pdftex.def)             Requested size: 483.69684pt x 246.08154pt.
 [5 <./img/evo_crossover_brut.png> <./img/evo_crossover_moy.png>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 191.
 
-<img/evo_mutation_moy.png, id=264, 1387.584pt x 704.6325pt>
+<img/evo_mutation_moy.png, id=264, 192.72pt x 98.0463pt>
 File: img/evo_mutation_moy.png Graphic file (type png)
 <use img/evo_mutation_moy.png>
 Package pdftex.def Info: img/evo_mutation_moy.png  used on input line 193.
-(pdftex.def)             Requested size: 483.69684pt x 245.62515pt.
+(pdftex.def)             Requested size: 483.69684pt x 246.08154pt.
 [6 <./img/evo_mutation_brut.png> <./img/evo_mutation_moy.png>]
 Chapitre 4.
 
@@ -540,11 +540,11 @@ File: img/4,1,1_Pareto.png Graphic file (type png)
 <use img/4,1,1_Pareto.png>
 Package pdftex.def Info: img/4,1,1_Pareto.png  used on input line 216.
 (pdftex.def)             Requested size: 170.71652pt x 172.98012pt.
-<img/Pareto_domine.png, id=279, 796.29495pt x 589.7232pt>
+<img/Pareto_domine.png, id=279, 240.9pt x 178.38644pt>
 File: img/Pareto_domine.png Graphic file (type png)
 <use img/Pareto_domine.png>
 Package pdftex.def Info: img/Pareto_domine.png  used on input line 237.
-(pdftex.def)             Requested size: 170.71652pt x 126.42807pt.
+(pdftex.def)             Requested size: 170.71652pt x 126.41844pt.
 [7
 
  <./img/4,1,1_Pareto_uni.png> <./img/4,1,1_Pareto.png>]
@@ -553,11 +553,11 @@ File: img/sch_nsga2.png Graphic file (type png)
 <use img/sch_nsga2.png>
 Package pdftex.def Info: img/sch_nsga2.png  used on input line 253.
 (pdftex.def)             Requested size: 341.43306pt x 193.31314pt.
-<img/hypervolume.png, id=294, 562.9833pt x 589.7232pt>
+<img/hypervolume.png, id=294, 120.45pt x 126.11115pt>
 File: img/hypervolume.png Graphic file (type png)
 <use img/hypervolume.png>
 Package pdftex.def Info: img/hypervolume.png  used on input line 270.
-(pdftex.def)             Requested size: 170.71652pt x 178.82599pt.
+(pdftex.def)             Requested size: 170.71652pt x 178.7577pt.
 
 Overfull \hbox (28.45274pt too wide) in paragraph at lines 270--271
  [][] 
@@ -579,11 +579,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--271
  []
 
 [8 <./img/Pareto_domine.png> <./img/sch_nsga2.png>]
-<img/pop_size_sch_moy.png, id=310, 1387.584pt x 704.8734pt>
+<img/pop_size_sch_moy.png, id=310, 482.2818pt x 245.2362pt>
 File: img/pop_size_sch_moy.png Graphic file (type png)
 <use img/pop_size_sch_moy.png>
 Package pdftex.def Info: img/pop_size_sch_moy.png  used on input line 301.
-(pdftex.def)             Requested size: 512.1496pt x 260.1645pt.
+(pdftex.def)             Requested size: 512.1496pt x 260.43933pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -592,33 +592,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 306.
 
-<img/pop_size_sch_liss.png, id=311, 1387.584pt x 704.8734pt>
+<img/pop_size_sch_liss.png, id=311, 481.8pt x 244.7544pt>
 File: img/pop_size_sch_liss.png Graphic file (type png)
 <use img/pop_size_sch_liss.png>
 Package pdftex.def Info: img/pop_size_sch_liss.png  used on input line 308.
-(pdftex.def)             Requested size: 512.1496pt x 260.1645pt.
+(pdftex.def)             Requested size: 512.1496pt x 260.19653pt.
 [9 <./img/hypervolume.png>]
-<img/DTLZ7_pop.png, id=323, 1387.584pt x 704.6325pt>
+<img/DTLZ7_pop.png, id=323, 96.36pt x 49.02315pt>
 File: img/DTLZ7_pop.png Graphic file (type png)
 <use img/DTLZ7_pop.png>
 Package pdftex.def Info: img/DTLZ7_pop.png  used on input line 329.
-(pdftex.def)             Requested size: 426.79134pt x 216.72429pt.
+(pdftex.def)             Requested size: 426.79134pt x 217.16559pt.
  [10 <./img/pop_size_sch_moy.png> <./img/pop_size_sch_liss.png>]
-<img/DTLZ7_crossover.png, id=332, 1387.584pt x 704.6325pt>
+<img/DTLZ7_crossover.png, id=332, 96.36pt x 49.02315pt>
 File: img/DTLZ7_crossover.png Graphic file (type png)
 <use img/DTLZ7_crossover.png>
 Package pdftex.def Info: img/DTLZ7_crossover.png  used on input line 348.
-(pdftex.def)             Requested size: 426.79134pt x 216.72429pt.
+(pdftex.def)             Requested size: 426.79134pt x 217.16559pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <./img/DTLZ7_pop.png>]
-<img/DTLZ7_mutation.png, id=341, 1387.584pt x 704.6325pt>
+<img/DTLZ7_mutation.png, id=341, 96.36pt x 49.02315pt>
 File: img/DTLZ7_mutation.png Graphic file (type png)
 <use img/DTLZ7_mutation.png>
 Package pdftex.def Info: img/DTLZ7_mutation.png  used on input line 363.
-(pdftex.def)             Requested size: 426.79134pt x 216.72429pt.
+(pdftex.def)             Requested size: 426.79134pt x 217.16559pt.
  [12 <./img/DTLZ7_crossover.png> <./img/DTLZ7_mutation.png>]
 Chapitre 5.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 379.
@@ -695,7 +695,7 @@ TeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Akashita/Documents/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Akashita/Documents/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Akashita/Documents/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on report.pdf (20 pages, 76175286 bytes).
+Output written on report.pdf (20 pages, 4491285 bytes).
 PDF statistics:
  834 PDF objects out of 1000 (max. 8388607)
  97 named destinations out of 1000 (max. 500000)
